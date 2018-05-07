@@ -1,6 +1,6 @@
 import os
-from eurovision_youtube_counter import db_connection_test as db
-from eurovision_youtube_counter import plot_data as plot_data
+from .eurovision_youtube_counter import db_connection_test as db
+from .eurovision_youtube_counter import plot_data as plot_data
 
 from django.shortcuts import render
 
