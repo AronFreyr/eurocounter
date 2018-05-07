@@ -1,4 +1,5 @@
 import sqlite3
+import os
 
 
 def recreate_database(recreate=False):
@@ -66,7 +67,9 @@ def store_data(data):
     
     
 def read_data():
-    conn = sqlite3.connect('database\db_test.sqlite3')
+    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), r'eurovision_youtube_counter\database\db_test.sqlite3')
+    #conn = sqlite3.connect('database\db_test.sqlite3')
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     cur.execute("SELECT * FROM measurement;")

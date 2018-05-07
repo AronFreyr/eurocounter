@@ -22,10 +22,10 @@ def main():
 
 
     #db.recreate_database()
-    video_dict = eurocount.create_video_dict(list_type, video_links_list)
-    db.store_data(video_dict)
+    #video_dict = eurocount.create_video_dict(list_type, video_links_list)
+    #db.store_data(video_dict)
     data_from_db = db.read_data()
-    plot_data.create_graph(data_from_db)
+    print(plot_data.create_graph(data_from_db))
     #print(eurocount.get_video_list(video_links_list))
 
 

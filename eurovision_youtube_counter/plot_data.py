@@ -20,7 +20,8 @@ def create_graph(data_from_db):
         tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list)
-    py.offline.plot(fig, filename=r'plots\test-plot.html', auto_open=False)
+    #py.offline.plot(fig, filename=r'plots\test-plot.html', auto_open=False)
+    return py.offline.plot(fig, include_plotlyjs=True, output_type='div')
 
 
 @DeprecationWarning
