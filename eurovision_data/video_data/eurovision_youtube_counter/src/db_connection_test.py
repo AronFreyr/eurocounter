@@ -3,7 +3,8 @@ import os
 
 
 def recreate_database(recreate=False):
-    conn = sqlite3.connect('database\db_test.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     if recreate:  # If the database is not being created for the first time, we need to destroy it.
@@ -27,7 +28,8 @@ def recreate_database(recreate=False):
 
 
 def store_data(data):
-    conn = sqlite3.connect('database\db_test.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
+    conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
     cur.execute('SELECT COUNT(1) FROM video_type WHERE description = (?)', (data['description'],))

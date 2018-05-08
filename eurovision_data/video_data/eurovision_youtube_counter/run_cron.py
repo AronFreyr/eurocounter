@@ -1,8 +1,10 @@
 import json
 
 #import eurovision_youtube_counter.db_connection_test as db
-import eurovision_data.video_data.eurovision_youtube_counter.src.db_connection_test as db
-import eurovision_data.video_data.eurovision_youtube_counter.src.youtube_view_count_v0_2 as eurocount
+#import eurovision_data.video_data.eurovision_youtube_counter.src.db_connection_test as db
+import src.db_connection_test as db
+#import eurovision_data.video_data.eurovision_youtube_counter.src.youtube_view_count_v0_2 as eurocount
+import src.youtube_view_count_v0_2 as eurocount
 
 
 def run_cron():
@@ -13,7 +15,8 @@ def run_cron():
     for video_groups in data['video_group']:
         link_list = [x['link'] for x in video_groups['videos']]
         video_dict = eurocount.create_video_dict(video_groups['type'], link_list)
-        print(video_dict)
+        db.store_data(video_dict)
+        #print(video_dict)
 
 
     #db.recreate_database()
@@ -21,6 +24,7 @@ def run_cron():
     #db.store_data(video_dict)
     #data_from_db = db.read_data()
     #print(data_from_db)
+    #db.recreate_database(True)
     #print(plot_data.create_graph(data_from_db))
     #print(eurocount.get_video_list(video_links_list))
 
