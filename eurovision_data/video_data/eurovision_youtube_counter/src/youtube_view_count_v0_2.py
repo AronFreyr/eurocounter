@@ -5,7 +5,7 @@ from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 import datetime
-import db_connection_test
+from . import db_connection_test
 
 
 # This function is a little misleading, it's input is only a single video_id and it returns data on a single video,

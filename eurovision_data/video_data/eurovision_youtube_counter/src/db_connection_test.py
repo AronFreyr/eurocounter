@@ -67,14 +67,13 @@ def store_data(data):
     
     
 def read_data():
-    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), r'eurovision_youtube_counter\database\db_test.sqlite3')
-    #conn = sqlite3.connect('database\db_test.sqlite3')
+    #db_path = os.path.join(os.path.abspath(''), r'database/db_test.sqlite3')
+    #db_path = os.path.abspath('euro_counter')
+    #db_path = os.path.realpath(__file__)
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
+    print('db path: ' + db_path)
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
-
-    cur.execute("SELECT * FROM measurement;")
-    test = cur.fetchall()
-    #print(test)
 
     cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
                 'FROM video '
@@ -90,3 +89,18 @@ def read_data():
     conn.close()
 
     return data_from_db
+
+
+def read_data_with_video_type(video_type_input):
+    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
+                           r'eurovision_youtube_counter\database\../database/db_test.sqlite3')
+
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
+                'FROM video '
+                'JOIN measurement ON video.rowid = measurement.video_id '
+                'JOIN video_type ON video.type_id = video_type.rowid '
+                'WHERE video_type.description = (%s) '
+                'ORDER BY video.name ASC, measurement.measurement_time ASC;', video_type_input)
+    data_from_db = cur.fetchall()

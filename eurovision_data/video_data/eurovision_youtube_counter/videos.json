@@ -1,0 +1,34 @@
+{
+  "video_group": [
+    {
+      "type": "Euro semi finals 1 2017",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=nH6X2DVP8V4"},
+        {"link": "https://www.youtube.com/watch?v=058Yyhxsi7o"},
+        {"link": "https://www.youtube.com/watch?v=SznlioGhq2k"},
+        {"link": "https://www.youtube.com/watch?v=wY1fN0R5vXY"},
+        {"link": "https://www.youtube.com/watch?v=0td62XxnjBk"},
+        {"link": "https://www.youtube.com/watch?v=nVrlEB1bN3w"},
+        {"link": "https://www.youtube.com/watch?v=c3S3g0MKx08"},
+        {"link": "https://www.youtube.com/watch?v=prqZ8MSAPh4"},
+        {"link": "https://www.youtube.com/watch?v=B94IsBm4Y0Q"},
+        {"link": "https://www.youtube.com/watch?v=yKh8sLLXix4"}
+      ]
+    },
+    {
+      "type": "Euro semi finals 2 2017",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=clltO-wwfRE"},
+        {"link": "https://www.youtube.com/watch?v=mX8LYc5eaEM"},
+        {"link": "https://www.youtube.com/watch?v=c-VoiE7R9lc"},
+        {"link": "https://www.youtube.com/watch?v=UXdOA2mSG20"},
+        {"link": "https://www.youtube.com/watch?v=tS-R0YlbumQ"},
+        {"link": "https://www.youtube.com/watch?v=tkP0xw_i_Ho"},
+        {"link": "https://www.youtube.com/watch?v=e22HgB_pHxo"},
+        {"link": "https://www.youtube.com/watch?v=1zR3KyVw1-Q"},
+        {"link": "https://www.youtube.com/watch?v=jDXQm5JPEJc"},
+        {"link": "https://www.youtube.com/watch?v=RueNedKCvGA"}
+      ]
+    }
+  ]
+}
