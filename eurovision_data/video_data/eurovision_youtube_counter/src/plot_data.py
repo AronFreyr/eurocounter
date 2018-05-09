@@ -20,8 +20,8 @@ def create_graph(data_from_db):
         tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list)
-    #py.offline.plot(fig, filename=r'plots\test-plot.html', auto_open=False)
-    return py.offline.plot(fig, include_plotlyjs=True, output_type='div')
+    py.offline.plot(fig, filename=r'plots/test-plot.html', auto_open=False)
+    #return py.offline.plot(fig, include_plotlyjs=True, output_type='div')
 
 
 @DeprecationWarning
@@ -91,3 +91,4 @@ def plot_raw(line_nr, device_id=None):
     if tracer_list:
         fig = go.Figure(layout = layout, data = tracer_list)
         return (device_list, py.offline.plot(fig, include_plotlyjs=False, output_type='div'))
+
