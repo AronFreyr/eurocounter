@@ -44,6 +44,32 @@
         {"link": "https://www.youtube.com/watch?v=UatZDDfc3bU"},
         {"link": "https://www.youtube.com/watch?v=VbNFep0qyck"}
       ]
+    },
+    {
+      "type": "Euro semi finals 2 2018",
+      "videos": [
+         {"link": "https://www.youtube.com/watch?v=poInYpdNXso"},
+         {"link": "https://www.youtube.com/watch?v=6DkbBEjGKtg"},
+         {"link": "https://www.youtube.com/watch?v=YLbC-k3nnJQ"},
+         {"link": "https://www.youtube.com/watch?v=DJ9ajcic9fI"},
+         {"link": "https://www.youtube.com/watch?v=sRtygbA0-DU"},
+         {"link": "https://www.youtube.com/watch?v=4lGDRmrQLTA"},
+         {"link": "https://www.youtube.com/watch?v=lR8x85ZFu44"},
+         {"link": "https://www.youtube.com/watch?v=yizRoV7uPKo"},
+         {"link": "https://www.youtube.com/watch?v=BtPKKWgNR9g"},
+         {"link": "https://www.youtube.com/watch?v=m1kjPaVAeeE"},
+         {"link": "https://www.youtube.com/watch?v=42JL4rEgp_U"},
+         {"link": "https://www.youtube.com/watch?v=g0tS6oTseNw"},
+         {"link": "https://www.youtube.com/watch?v=BrKpMOy02-c"}
+	]
+    },
+    {
+      "type": "Euro semi finals unofficial 2018",
+      "videos": [
+	{"link": "https://www.youtube.com/watch?v=I6nKPOgQyr4"},
+	{"link": "https://www.youtube.com/watch?v=pAe0b_EVXT4"},
+	{"link": "https://www.youtube.com/watch?v=g8wx7BRfqSI"}
+      ]
     }
   ]
 }

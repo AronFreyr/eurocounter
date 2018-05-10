@@ -82,6 +82,8 @@ def read_data():
                 'JOIN measurement ON video.rowid = measurement.video_id '
                 'JOIN video_type ON video.type_id = video_type.rowid '
                 'WHERE video_type.description = "Euro semi finals 1 2018" '
+                'OR video_type.description = "Euro semi finals 2 2018" '
+                'OR video_type.description = "Euro semi finals unofficial 2018" '
                 'ORDER BY video.name ASC, measurement.measurement_time ASC;')
     data_from_db = cur.fetchall()
 
