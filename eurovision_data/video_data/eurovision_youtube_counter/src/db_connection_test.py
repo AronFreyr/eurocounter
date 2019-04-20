@@ -36,7 +36,7 @@ def store_data(data):
     type_exists = cur.fetchall()[0][0]
 
     if not type_exists:
-        cur.execute(('INSERT INTO video_type (description) VALUES (?)'), (data['description'],))
+        cur.execute('INSERT INTO video_type (description) VALUES (?)', (data['description'],))
 
     #video_type = cur.lastrowid
 
@@ -48,7 +48,7 @@ def store_data(data):
         video_exists = cur.fetchall()[0][0]
 
         if not video_exists:
-            cur.execute(('INSERT INTO video (name, link, type_id) VALUES (?, ?, ?)'),
+            cur.execute('INSERT INTO video (name, link, type_id) VALUES (?, ?, ?)',
                         (data['videos'][video_data]['name'], video_data, video_type))
 
         #video_id = cur.lastrowid
