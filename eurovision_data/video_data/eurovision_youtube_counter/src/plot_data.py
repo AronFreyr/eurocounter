@@ -1,28 +1,24 @@
 import plotly as py
 import plotly.graph_objs as go
 
+import video_json_connect
 
-def create_graph(data_object_list):
-    # print('data from db: ', data_from_db)
-    # videos = set(x[2] for x in data_from_db)
-    # print('videos: ', videos)
-    # value_dict = {x: {'views': [], 'time': [], 'type': []} for x in videos}
-    #
-    # for x in range(len(data_from_db) - 1):
-    #     data_line = data_from_db[x]
-    #     current_video_name = data_line[2]
-    #     value_dict[current_video_name]['views'].append(data_line[0])
-    #     value_dict[current_video_name]['time'].append(data_line[1])
-    #     value_dict[current_video_name]['type'].append(data_line[3])
 
-    #print(value_dict)
+def create_graph(data_from_db):
+
+    value_dict = {x.get_name(): {'views': [], 'time': [], 'type': []} for x in data_from_db}  # create empty dictionary for videos
+
+    video_json_connect.get_video_urls()
+
+    for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
+        name = x.get_name()
+        value_dict[name]['views'].append(x.get_views())
+        value_dict[name]['time'].append(x.get_time())
+        value_dict[name]['type'].append(x.get_description())
 
     tracer_list = []
-    # for key, value in value_dict.items():
-    #     tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
-    #     tracer_list.append(tracer)
-    for obj in data_object_list:
-        tracer = go.Scatter(x=obj.get_time(), y=obj.get_views(), text=obj.get_type(), mode='lines+markers', name=obj.get_name())
+    for key, value in value_dict.items():
+        tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list)
     #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)

@@ -4,7 +4,8 @@ import json
 from pprint import pprint
 import os
 
-from .eurovision_youtube_counter.src import db_connection_test as db
+from .eurovision_youtube_counter.src import db_connect as db
+from .eurovision_youtube_counter.src.video_json_connect import get_video_urls
 
 
 class JsonTests(TestCase):
@@ -26,6 +27,9 @@ class JsonTests(TestCase):
 
         for x in data['video_group']:
             print(x['type'])
+
+    def test_call_json_connect(self):
+        get_video_urls()
 
 
 class DatabaseTests(TestCase):

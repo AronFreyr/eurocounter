@@ -5,7 +5,7 @@ from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 import datetime
-from . import db_connection_test
+from . import db_connect
 
 
 # This function is a little misleading, it's input is only a single video_id and it returns data on a single video,
@@ -64,6 +64,12 @@ def get_video_list(video_links_list):
 
 
 def create_video_dict(list_type, video_links_list):
+    """
+    Create a dictionary that contains the data for the Youtube videos.
+    :param list_type:
+    :param video_links_list:
+    :return:
+    """
     video_dict = {'timestamp': datetime.datetime.now(), 'description': list_type, 'videos': {}}
     for video in video_links_list:
         video_dict['videos'][video] = {}
@@ -132,7 +138,7 @@ def main():
 
     list_type = 'Euro semi finals 1'
     video_dict = create_video_dict(list_type, video_links_list)
-    db_connection_test.store_data(video_dict)
+    db_connect.store_data(video_dict)
 
     video_links_list2 = [
         'https://www.youtube.com/watch?v=clltO-wwfRE',
@@ -148,8 +154,8 @@ def main():
     ]
     list_type = 'Euro semi finals 2'
     video_dict2 = create_video_dict(list_type, video_links_list2)
-    db_connection_test.store_data(video_dict2)
-    db_connection_test.read_data()
+    db_connect.store_data(video_dict2)
+    db_connect.read_data()
     print('finished')
 
 

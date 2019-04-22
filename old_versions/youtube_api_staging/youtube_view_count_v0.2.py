@@ -5,7 +5,7 @@ from apiclient.discovery import build
 from apiclient.errors import HttpError
 from oauth2client.tools import argparser
 import datetime
-import db_connection_test
+import db_connect
 
 
 # This function is a little misleading, it's input is only a single video_id and it returns data on a single video,
@@ -130,7 +130,7 @@ def main():
 
     list_type = 'Euro semi finals 1'
     video_dict = create_video_dict(list_type, video_links_list)
-    db_connection_test.store_data(video_dict)
+    db_connect.store_data(video_dict)
 
     video_links_list2 = [
         'https://www.youtube.com/watch?v=clltO-wwfRE',
@@ -146,8 +146,8 @@ def main():
     ]
     list_type = 'Euro semi finals 2'
     video_dict2 = create_video_dict(list_type, video_links_list2)
-    db_connection_test.store_data(video_dict2)
-    db_connection_test.read_data()
+    db_connect.store_data(video_dict2)
+    db_connect.read_data()
     print('finished')
 
 

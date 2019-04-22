@@ -1,8 +1,17 @@
 import sqlite3
 import os
 
+from datetime import datetime
 
+
+# This is mostly a test function, the database should not be destroyed from now on.
 def recreate_database(recreate=False):
+    """
+    Function for creating or recreating the entire database. USE WITH CAUTION.
+    :param recreate: Whether the database is being created from scratch or being recreated,
+    if it is being recreated then it is necessary to delete the tables first and then create the database.
+    :return: Nothing
+    """
     db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
@@ -28,6 +37,14 @@ def recreate_database(recreate=False):
 
 
 def store_data(data):
+    # TODO: This could be further clarified.
+    """
+    Function for storing the data in the database. It has to go through various checks to see if the tables
+    it is inserting already exist.
+
+    :param data: The data that should be inserted.
+    :return: Nothing.
+    """
     db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
@@ -54,8 +71,6 @@ def store_data(data):
         #video_id = cur.lastrowid
         cur.execute('SELECT rowid FROM video WHERE link = (?)', (video_data,))
         video_id = cur.fetchall()[0][0]
-        #print('ttest', test)
-
 
         cur.execute('INSERT INTO measurement (measurement_time, views, likes, dislikes, comment_count, video_id)'
                     ' VALUES (?, ?, ?, ?, ?, ?)',
@@ -69,11 +84,9 @@ def store_data(data):
     
     
 def read_data():
-    #db_path = os.path.join(os.path.abspath(''), r'database/db_test.sqlite3')
-    #db_path = os.path.abspath('euro_counter')
-    #db_path = os.path.realpath(__file__)
     db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
     print('db path: ' + db_path)
+
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
@@ -96,9 +109,36 @@ def read_data():
     return data_from_db
 
 
-def read_data_with_video_type(video_type_input):
-    db_path = os.path.join(os.path.dirname(os.path.dirname(__file__)),
-                           r'eurovision_youtube_counter\database\../database/db_test.sqlite3')
+def read_data_with_video_type(video_type_input_list, year):
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
+
+    # Cutoff point for the relevant data, later data is irrelevant.
+    last_relevant_date = datetime(year=int(year), month=6, day=1)
+
+    conn = sqlite3.connect(db_path)
+    cur = conn.cursor()
+    cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description, '
+                'measurement.likes, measurement.dislikes, measurement.comment_count '
+                'FROM video '
+                'JOIN measurement ON video.rowid = measurement.video_id '
+                'JOIN video_type ON video.type_id = video_type.rowid '
+                'WHERE video_type.description = ? OR video_type.description = ? '
+                'AND measurement_time < ? '
+                'ORDER BY video.name ASC, measurement.measurement_time ASC;',
+                (video_type_input_list[0], video_type_input_list[1], last_relevant_date))
+    data_from_db = cur.fetchall()
+
+    return data_from_db
+
+
+def read_data_with_year(year_input):
+
+    first_date = datetime(year=int(year_input), month=1, day=1)
+    print('first date: ', first_date)
+    last_date = datetime(year=int(year_input), month=12, day=31)
+    print('last_date:', last_date)
+
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
 
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
@@ -106,6 +146,12 @@ def read_data_with_video_type(video_type_input):
                 'FROM video '
                 'JOIN measurement ON video.rowid = measurement.video_id '
                 'JOIN video_type ON video.type_id = video_type.rowid '
-                'WHERE video_type.description = (%s) '
-                'ORDER BY video.name ASC, measurement.measurement_time ASC;', video_type_input)
+                'WHERE measurement_time > ?'
+                ' AND measurement_time < ?'
+                ' AND video_type.description = ?'
+                ' ORDER BY video.name ASC, measurement.measurement_time ASC;', (first_date, last_date))
     data_from_db = cur.fetchall()
+
+    cur.close()
+    conn.close()
+    return data_from_db

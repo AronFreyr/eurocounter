@@ -3,7 +3,7 @@ import os
 
 #import eurovision_youtube_counter.db_connection_test as db
 #import eurovision_data.video_data.eurovision_youtube_counter.src.db_connection_test as db
-import src.db_connection_test as db
+import src.db_connect as db
 #import eurovision_data.video_data.eurovision_youtube_counter.src.youtube_view_count_v0_2 as eurocount
 import src.youtube_view_count_v0_2 as eurocount
 
@@ -26,14 +26,6 @@ def run_cron():
 
     print('ending process')
     return
-    #db.recreate_database()
-    #video_dict = eurocount.create_video_dict(list_type, video_links_list)
-    #db.store_data(video_dict)
-    #data_from_db = db.read_data()
-    #print(data_from_db)
-    #db.recreate_database(True)
-    #print(plot_data.create_graph(data_from_db))
-    #print(eurocount.get_video_list(video_links_list))
 
 
 # This tells the script to run the main function.
