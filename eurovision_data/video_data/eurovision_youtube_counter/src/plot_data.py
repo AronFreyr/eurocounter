@@ -6,12 +6,16 @@ import video_json_connect
 
 def create_graph(data_from_db):
 
-    value_dict = {x.get_name(): {'views': [], 'time': [], 'type': []} for x in data_from_db}  # create empty dictionary for videos
+    if not data_from_db:
+        return 'No data was found.'
+
+    value_dict = {x.get_clean_name(): {'views': [], 'time': [], 'type': []} for x in data_from_db}  # create empty dictionary for videos
 
     video_json_connect.get_video_urls()
 
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
-        name = x.get_name()
+        name = x.get_clean_name()
+        #name = x.get_name()
         value_dict[name]['views'].append(x.get_views())
         value_dict[name]['time'].append(x.get_time())
         value_dict[name]['type'].append(x.get_description())

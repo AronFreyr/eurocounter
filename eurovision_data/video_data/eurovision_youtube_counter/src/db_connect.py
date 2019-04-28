@@ -113,19 +113,31 @@ def read_data_with_video_type(video_type_input_list, year):
     db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/db_test.sqlite3')
 
     # Cutoff point for the relevant data, later data is irrelevant.
-    last_relevant_date = datetime(year=int(year), month=6, day=1)
+    #last_relevant_date = datetime(year=int(year), month=6, day=1)
+    last_relevant_date = datetime(year=2018, month=6, day=1)
 
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
-    cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description, '
-                'measurement.likes, measurement.dislikes, measurement.comment_count '
-                'FROM video '
-                'JOIN measurement ON video.rowid = measurement.video_id '
-                'JOIN video_type ON video.type_id = video_type.rowid '
-                'WHERE video_type.description = ? OR video_type.description = ? '
-                'AND measurement_time < ? '
-                'ORDER BY video.name ASC, measurement.measurement_time ASC;',
-                (video_type_input_list[0], video_type_input_list[1], last_relevant_date))
+
+    question_marks = '?' * len(video_type_input_list)  # Create as many question marks as the list is long.
+
+    # Formatted query string, for arbitrary number of variables for 'video_type.description'
+    query = """
+      SELECT measurement.views, measurement.measurement_time, video.name, video_type.description, 
+      measurement.likes, measurement.dislikes, measurement.comment_count 
+      FROM video 
+      JOIN measurement ON video.rowid = measurement.video_id 
+      JOIN video_type ON video.type_id = video_type.rowid 
+      WHERE video_type.description IN ({}) 
+      AND measurement_time < ? 
+      ORDER BY video.name ASC, measurement.measurement_time ASC;
+    """.format(','.join(question_marks))
+
+    query_args = list(video_type_input_list)
+    query_args.extend([last_relevant_date])  # All of the queried variables in a single list.
+
+    cur.execute(query, query_args)  # Execute the query.
+
     data_from_db = cur.fetchall()
 
     return data_from_db

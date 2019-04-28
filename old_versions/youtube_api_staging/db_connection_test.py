@@ -10,6 +10,7 @@ def recreate_database():
     cur.execute("DROP TABLE video_type;")
     cur.execute('DROP TABLE video;')
     cur.execute('DROP TABLE measurement;')
+
     cur.execute("CREATE TABLE video_type("
                 "type_id serial PRIMARY KEY, description VARCHAR);")
 
