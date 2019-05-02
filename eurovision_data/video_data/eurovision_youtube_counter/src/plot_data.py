@@ -13,6 +13,13 @@ def create_graph(data_from_db):
 
     video_json_connect.get_video_urls()
 
+    # data_from_db = data_from_db[::2]
+
+    while len(data_from_db) > 10000:
+        data_from_db = data_from_db[::2]
+
+    print(len(data_from_db))
+
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
         name = x.get_clean_name()
         #name = x.get_name()
@@ -20,13 +27,33 @@ def create_graph(data_from_db):
         value_dict[name]['time'].append(x.get_time())
         value_dict[name]['type'].append(x.get_description())
 
+    config = {'scrollZoom': True, 'displayModeBar': True,
+              'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
+                                         'lasso2d',  # Never got it to work
+                                         'select2d',  # Don't know how it works
+                                         'toggleSpikelines'  # Have no idea what it's supposed to do
+                                         ], 'showLink': False}
+
     tracer_list = []
-    for key, value in value_dict.items():
+
+    annotations = []
+
+    layout = go.Layout()
+
+    annotations.append(dict(xref='paper', yref='paper', x=0.5, y=1.05,
+                            xanchor='left', yanchor='bottom', text='Eurovision',
+                            showarrow=False,
+                            font=dict(family='Arial', size=30, color='rgb(37,37,37)')
+                            ))
+
+    layout['annotations'] = annotations
+
+    for key, value in sorted(value_dict.items()):
         tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
-    fig = go.Figure(data=tracer_list)
+    fig = go.Figure(data=tracer_list, layout=layout)
     #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)
-    return py.offline.plot(fig, include_plotlyjs=True, output_type='div')
+    return py.offline.plot(fig, include_plotlyjs=True, output_type='div', config=config)
 
 
 @DeprecationWarning
