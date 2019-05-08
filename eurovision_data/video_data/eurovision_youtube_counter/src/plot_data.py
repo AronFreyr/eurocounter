@@ -32,7 +32,8 @@ def create_graph(data_from_db):
                                          'lasso2d',  # Never got it to work
                                          'select2d',  # Don't know how it works
                                          'toggleSpikelines'  # Have no idea what it's supposed to do
-                                         ], 'showLink': False}
+                                         ],
+              'showLink': False}
 
     tracer_list = []
 
