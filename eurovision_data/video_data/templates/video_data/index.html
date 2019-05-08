@@ -1,14 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
+{% extends 'video_data/base.html' %}
+{% load static %}
+
+{% block title %} HOME {% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block head_css_page %}
+    <link href="{% static 'video_data/css/index.css' %}" rel="stylesheet" media="screen">
+{% endblock head_css_page %}
+{% block content %}
     INDEX
     <ul>
         <li><a href="{% url 'video_data:plot-data-year' 2017 %}">{{ 2017 }}</a></li>
         <li><a href="{% url 'video_data:plot-data-year' 2018 %}">{{ 2018 }}</a></li>
+        <li><a href="{% url 'video_data:plot-data-year' 2019 %}">{{ 2019 }}</a></li>
     </ul>
-</body>
-</html>
+{% endblock content %}

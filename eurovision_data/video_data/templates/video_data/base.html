@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- A block for the title of the page -->
+    <title>{% block title %} Title {% endblock title %}</title>
+    <!-- A block for the icon of the page. -->
+    {% block head_favicon %}
+        <link rel="icon" type="image/png"
+              href="{{ STATIC_URL }}images/favicon.ico">
+    {% endblock head_favicon %}
+    {% load static %}
+    {% block head_css %}
+        {% block head_css_site %}
+            <link rel="stylesheet" href="{% static 'video_data/bootstrap/bootstrap_4/bootstrap.min.css' %}"
+            crossorigin="anonymous" media="screen"/>
+            <link href="{% static 'video_data/css/base.css' %}" rel="stylesheet" media="screen">
+        {% endblock head_css_site %}
+        {% block head_css_section %}{% endblock head_css_section %}
+        {% block head_css_page %}{% endblock head_css_page %}
+    {% endblock head_css %}
+</head>
+<body>
+{# Navigation Menu #}
+    <header>
+        <!--<div class="navbar navbar-default navbar-static-top-->
+        <!--<nav class="navbar navbar-dark navbar-static-top bg-dark-->
+        <nav class="navbar navbar-dark bg-dark fixed-top
+            {% block nav-style %}{% endblock nav-style %}" role="navigation"
+        >
+            <div class="container p-none">
+                <a class="navbar-brand" href={% url 'video_data:index' %}>Home</a>
+                <a class="navbar-brand" href={% url 'video_data:plot-data-year' 2019 %}>2019</a>
+                <a class="navbar-brand" href={% url 'video_data:plot-data-year' 2018 %}>2018</a>
+                <a class="navbar-brand" href={% url 'video_data:plot-data-year' 2017 %}>2017</a>
+            </div>
+        </nav>
+    </header>
+
+    {# The Document Body #}
+    <div id="site-wrapper">
+        {% block content %}
+            if you see this, something is wrong!
+        {% endblock content %}
+    </div>
+    {# The Footer #}
+    {% comment %}
+    <div class="footer">
+        <div class="container">
+            <p>A&A Industries</p>
+        </div>
+    </div>
+    {% endcomment %}
+
+
+{# Set of blocks that can be used to display JavaScript files #}
+    {% block footer_javascript %}
+        {% block footer_javascript_site %}
+            <script src="{% static 'video_data/jquery/jquery.min.js' %}"
+            crossorigin="anonymous"></script>
+
+            <!-- Bootstrap needs to load AFTER jQuery -->
+            <script src="{% static 'video_data/bootstrap/bootstrap_4/bootstrap.bundle.min.js' %}"
+            crossorigin="anonymous"></script>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                    crossorigin="anonymous"></script>
+
+            <!-- Testing prettyprint for codeblocks -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+            <script>prettyPrint()</script>
+
+            <!-- testing highlightjs for codeblocks -->
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+            <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+            <script>hljs.initHighlightingOnLoad();</script>
+
+            {% comment %}
+            <script src="{% static 'notesfromxml/jquery/jquery.min.js' %}"></script>
+            <script src="{% static 'notesfromxml/bootstrap/bootstrap.min.css' %}"></script>
+            {% endcomment %}
+            {% comment %}<script src="{% static 'notesfromxml/js/app' %}js/app.js"></script> {% endcomment %}
+        {% endblock footer_javascript_site %}
+        {% block footer_javascript_section %}{% endblock footer_javascript_section %}
+        {% block footer_javascript_page %}{% endblock footer_javascript_page %}
+    {% endblock footer_javascript %}
+</body>
+</html>

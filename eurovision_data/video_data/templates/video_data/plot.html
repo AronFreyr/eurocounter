@@ -1,14 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Index</title>
-</head>
-<body>
+{% extends 'video_data/base.html' %}
+{% load static %}
+
+{% block title %} YEAR {% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block head_css_page %}
+    <link href="{% static 'video_data/css/plot.css' %}" rel="stylesheet" media="screen">
+{% endblock head_css_page %}
+{% block content %}
+<div id="data-container">
     <h1>Test H1</h1>
-    <div style="border: 3px black solid">
+    <div id="graph">
         {{ plot | safe }}
     </div>
     <h5>Test H5</h5>
-</body>
-</html>
+    <span><b>Change graph:</b></span>
+    <form action="{% url 'video_data:plot-data-year' year %}" method="post">
+        {% csrf_token %}
+        <label>
+            <select name="y_axis_choices">
+                {% for choice in y_axis_possibilities %}
+                    <option value="{{ choice }}">{{ choice }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <button type="submit" class="btn btn-secondary" value="Change y-axis">Submit</button>
+    </form>
+</div>
+{% endblock content %}

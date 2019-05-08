@@ -4,21 +4,19 @@ import plotly.graph_objs as go
 import video_json_connect
 
 
-def create_graph(data_from_db):
+def create_graph(data_from_db, y_value='views'):
 
     if not data_from_db:
         return 'No data was found.'
 
-    value_dict = {x.get_clean_name(): {'views': [], 'time': [], 'type': []} for x in data_from_db}  # create empty dictionary for videos
-
-    video_json_connect.get_video_urls()
+    value_dict = {x.get_clean_name(): {'views': [], 'likes': [],
+                                       'dislikes': [], 'comment_count': [],
+                                       'time': [], 'type': []} for x in data_from_db}  # create empty dictionary for videos
 
     # data_from_db = data_from_db[::2]
 
     while len(data_from_db) > 10000:
         data_from_db = data_from_db[::2]
-
-    print(len(data_from_db))
 
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
         name = x.get_clean_name()
@@ -26,12 +24,16 @@ def create_graph(data_from_db):
         value_dict[name]['views'].append(x.get_views())
         value_dict[name]['time'].append(x.get_time())
         value_dict[name]['type'].append(x.get_description())
+        value_dict[name]['likes'].append(x.get_likes())
+        value_dict[name]['dislikes'].append(x.get_dislikes())
+        value_dict[name]['comment_count'].append(x.get_comments())
 
     config = {'scrollZoom': True, 'displayModeBar': True,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
                                          'lasso2d',  # Never got it to work
                                          'select2d',  # Don't know how it works
-                                         'toggleSpikelines'  # Have no idea what it's supposed to do
+                                         'toggleSpikelines',  # Have no idea what it's supposed to do
+                                         'zoom2d'  # There are much better ways to zoom
                                          ],
               'showLink': False}
 
@@ -48,9 +50,10 @@ def create_graph(data_from_db):
                             ))
 
     layout['annotations'] = annotations
+    layout['hovermode'] = 'closest'
 
     for key, value in sorted(value_dict.items()):
-        tracer = go.Scatter(x=value['time'], y=value['views'], text=value['type'], mode='lines+markers', name=key)
+        tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list, layout=layout)
     #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)
