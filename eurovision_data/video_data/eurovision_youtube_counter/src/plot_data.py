@@ -1,10 +1,16 @@
 import plotly as py
 import plotly.graph_objs as go
 
+import datetime
+
 import video_json_connect
 
 
-def create_graph(data_from_db, y_value='views'):
+def create_graph(data_from_db, y_value='views', year=None):
+
+    finals_dates = {'2017': datetime.datetime(day=13, month=5, year=2017, hour=19),
+                    '2018': datetime.datetime(day=12, month=5, year=2018, hour=19),
+                    '2019': datetime.datetime(day=18, month=5, year=2019, hour=19)}
 
     if not data_from_db:
         return 'No data was found.'
@@ -20,7 +26,6 @@ def create_graph(data_from_db, y_value='views'):
 
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
         name = x.get_clean_name()
-        #name = x.get_name()
         value_dict[name]['views'].append(x.get_views())
         value_dict[name]['time'].append(x.get_time())
         value_dict[name]['type'].append(x.get_description())
@@ -39,15 +44,42 @@ def create_graph(data_from_db, y_value='views'):
 
     tracer_list = []
 
-    annotations = []
+    if year:
+        annotations = [
+            # Dictionary for the arrow indicating the Eurovision Finals date.
+            dict(
+                x=finals_dates[year], y=0, arrowcolor="#000000",
+                arrowhead=1, arrowsize=1, arrowwidth=1,
+                ax=0, ay=-300, bgcolor="rgba(0,0,0,0)",
+                bordercolor="#000000", borderpad=1, borderwidth=1,
+                font=dict(color="#0000ff", family="Courier New", size=10),
+                opacity=1, showarrow=True, text="Eurovision Finals",
+                xref="x", yref="y"
+            )]
+    else:
+        annotations = []
 
-    layout = go.Layout()
-
-    annotations.append(dict(xref='paper', yref='paper', x=0.5, y=1.05,
-                            xanchor='left', yanchor='bottom', text='Eurovision',
-                            showarrow=False,
-                            font=dict(family='Arial', size=30, color='rgb(37,37,37)')
-                            ))
+    layout = go.Layout(
+        # Title text
+        title=go.layout.Title(
+            text='Eurovision ' + year, xref='paper', yref='paper',
+            font=dict(family='Arial', size=30, color='rgb(37,37,37)')
+        ),
+        # X-axis text
+        xaxis=go.layout.XAxis(
+            title=go.layout.xaxis.Title(
+                text='Time',
+                font=dict(family='Courier New, monospace', size=18, color='#7f7f7f')
+            )
+        ),
+        # Y-axis text
+        yaxis=go.layout.YAxis(
+            title=go.layout.yaxis.Title(
+                text=y_value,
+                font=dict(family='Courier New, monospace', size=18, color='#7f7f7f')
+            )
+        )
+    )
 
     layout['annotations'] = annotations
     layout['hovermode'] = 'closest'
