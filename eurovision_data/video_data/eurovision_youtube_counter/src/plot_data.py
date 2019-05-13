@@ -8,12 +8,13 @@ import video_json_connect
 
 def create_graph(data_from_db, y_value='views', year=None):
 
+    if not data_from_db:
+        return 'No data was found.'
+
+    # TODO: Final dates should be stored somewhere better, maybe in a database, maybe JSON.
     finals_dates = {'2017': datetime.datetime(day=13, month=5, year=2017, hour=19),
                     '2018': datetime.datetime(day=12, month=5, year=2018, hour=19),
                     '2019': datetime.datetime(day=18, month=5, year=2019, hour=19)}
-
-    if not data_from_db:
-        return 'No data was found.'
 
     value_dict = {x.get_clean_name(): {'views': [], 'likes': [],
                                        'dislikes': [], 'comment_count': [],
@@ -21,7 +22,7 @@ def create_graph(data_from_db, y_value='views', year=None):
 
     # data_from_db = data_from_db[::2]
 
-    while len(data_from_db) > 10000:
+    while len(data_from_db) > 10000:  # limiting the points displayed on the graph to improve performance.
         data_from_db = data_from_db[::2]
 
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
@@ -33,14 +34,14 @@ def create_graph(data_from_db, y_value='views', year=None):
         value_dict[name]['dislikes'].append(x.get_dislikes())
         value_dict[name]['comment_count'].append(x.get_comments())
 
-    config = {'scrollZoom': True, 'displayModeBar': True,
+    config = {'scrollZoom': True, 'displayModeBar': True, 'showLink': False,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
                                          'lasso2d',  # Never got it to work
                                          'select2d',  # Don't know how it works
                                          'toggleSpikelines',  # Have no idea what it's supposed to do
                                          'zoom2d'  # There are much better ways to zoom
-                                         ],
-              'showLink': False}
+                                         ]
+              }
 
     tracer_list = []
 
@@ -58,6 +59,28 @@ def create_graph(data_from_db, y_value='views', year=None):
             )]
     else:
         annotations = []
+
+    layout = _define_graph_layout(year, y_value)
+
+    layout['annotations'] = annotations
+    layout['hovermode'] = 'closest'
+
+    for key, value in sorted(value_dict.items()):
+        tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
+        tracer_list.append(tracer)
+    fig = go.Figure(data=tracer_list, layout=layout)
+    #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)
+    return py.offline.plot(fig, include_plotlyjs=True, output_type='div', config=config)
+
+
+def _define_graph_layout(year, y_value):
+    """
+    Function for preparing the layout that Plotly needs when creating the graph. Here things like "Title",
+     "X-Axis title" and "Y-Axis title" are defined.
+    :param year: The year for the data on the graph, need it to be displayed in the graph title.
+    :param y_value: The value that is displayed on the Y-axis, need it displayed on the graph.
+    :return: The layout object.
+    """
 
     layout = go.Layout(
         # Title text
@@ -80,16 +103,7 @@ def create_graph(data_from_db, y_value='views', year=None):
             )
         )
     )
-
-    layout['annotations'] = annotations
-    layout['hovermode'] = 'closest'
-
-    for key, value in sorted(value_dict.items()):
-        tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
-        tracer_list.append(tracer)
-    fig = go.Figure(data=tracer_list, layout=layout)
-    #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)
-    return py.offline.plot(fig, include_plotlyjs=True, output_type='div', config=config)
+    return layout
 
 
 @DeprecationWarning
