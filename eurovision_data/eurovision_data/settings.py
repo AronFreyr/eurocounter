@@ -20,7 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'i8kn9svwjh6+rx2lv(!!mtb2dr4b*5acjfus=__mb2c_-93wv0'
+# SECRET_KEY = 'i8kn9svwjh6+rx2lv(!!mtb2dr4b*5acjfus=__mb2c_-93wv0'
+
+with open(BASE_DIR + '/eurovision_data/secrets/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
+    f.close()
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

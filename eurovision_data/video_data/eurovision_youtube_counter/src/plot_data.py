@@ -3,8 +3,6 @@ import plotly.graph_objs as go
 
 import datetime
 
-import video_json_connect
-
 
 def create_graph(data_from_db, y_value='views', year=None):
 
