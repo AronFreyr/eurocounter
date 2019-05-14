@@ -8,11 +8,9 @@
 {% endblock head_css_page %}
 {% block content %}
 <div id="data-container">
-    <h1>Test H1</h1>
     <div id="graph">
         {{ plot | safe }}
     </div>
-    <h5>Test H5</h5>
     <div id="graph-options-container">
         <span><b>Change graph:</b></span>
         <form action="{% url 'video_data:plot-data-year' year %}" method="post">
