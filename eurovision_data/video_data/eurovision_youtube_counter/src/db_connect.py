@@ -113,7 +113,7 @@ def read_data_with_video_type(video_type_input_list, year):
     db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
 
     # Cutoff point for the relevant data, later data is irrelevant.
-    last_relevant_date = datetime(year=int(year), month=6, day=1)
+    last_relevant_date = datetime(year=int(year), month=5, day=22)
     #last_relevant_date = datetime(year=2018, month=6, day=1)
 
     conn = sqlite3.connect(db_path)
