@@ -24,7 +24,8 @@ def videos_list_by_id(part, video_id):
     # TODO: video. We should only do it once and use the same connection every time.
 
     # Youtube API -----------------------------------------------------
-    developer_key = "AIzaSyAtKot3NSpIBTbUHziloc9TddNdo9qNzRU"  # My youtube developer key.
+    #developer_key = "AIzaSyAtKot3NSpIBTbUHziloc9TddNdo9qNzRU"  # My youtube developer key.
+    developer_key = "AIzaSyCo9i6Nf0sxnLmHbul2c8UKkLAX_gP4_qE"
     api_service_name = "youtube"  # The name of the API that's being called.
     api_version = "v3"  # The version of the API that't being used.
     # Youtube API -----------------------------------------------------
