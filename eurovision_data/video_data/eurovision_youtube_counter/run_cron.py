@@ -20,7 +20,7 @@ def run_cron():
     for video_groups in data['video_group']:
         link_list = [x['link'] for x in video_groups['videos']]
         video_dict = eurocount.create_video_dict(video_groups['type'], link_list)
-        #db.store_data(video_dict)
+        db.store_data(video_dict)
         print('data storage successful')
         #print(video_dict)
 
