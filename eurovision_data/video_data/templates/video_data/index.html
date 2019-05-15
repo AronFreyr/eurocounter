@@ -7,10 +7,4 @@
     <link href="{% static 'video_data/css/index.css' %}" rel="stylesheet" media="screen">
 {% endblock head_css_page %}
 {% block content %}
-    INDEX
-    <ul>
-        <li><a href="{% url 'video_data:plot-data-year' 2017 %}">{{ 2017 }}</a></li>
-        <li><a href="{% url 'video_data:plot-data-year' 2018 %}">{{ 2018 }}</a></li>
-        <li><a href="{% url 'video_data:plot-data-year' 2019 %}">{{ 2019 }}</a></li>
-    </ul>
 {% endblock content %}
