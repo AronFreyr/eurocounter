@@ -14,3 +14,7 @@ a {
     background-color: #f2f2f2;
     border-radius: 6px;
 }
+
+#index-text-container {
+    padding-left: 100px;
+}
