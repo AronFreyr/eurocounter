@@ -18,7 +18,7 @@ def run_cron():
         f.close()
         
     for video_groups in data['video_group']:
-        link_list = [x['link'] for x in video_groups['videos']]
+        link_list = [x['link'] for x in video_groups['videos'] if video_groups['type'] == 'Euro semi finals 1 2019' or video_groups['type'] == 'Euro semi finals 2 2019']
         video_dict = eurocount.create_video_dict(video_groups['type'], link_list)
         db.store_data(video_dict)
         print('data storage successful')

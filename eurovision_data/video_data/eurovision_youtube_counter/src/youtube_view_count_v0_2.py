@@ -25,7 +25,8 @@ def videos_list_by_id(part, video_id):
 
     # Youtube API -----------------------------------------------------
     #developer_key = "AIzaSyAtKot3NSpIBTbUHziloc9TddNdo9qNzRU"  # My youtube developer key.
-    developer_key = "AIzaSyCo9i6Nf0sxnLmHbul2c8UKkLAX_gP4_qE"
+    #developer_key = "AIzaSyCo9i6Nf0sxnLmHbul2c8UKkLAX_gP4_qE"
+    developer_key = "AIzaSyBfS8MOwzmxdcwCIIZ0X6-xm5arAS9umZo"
     api_service_name = "youtube"  # The name of the API that's being called.
     api_version = "v3"  # The version of the API that't being used.
     # Youtube API -----------------------------------------------------
