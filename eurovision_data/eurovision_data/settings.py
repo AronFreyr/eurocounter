@@ -11,25 +11,41 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import configparser
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_FILE = ''
 
+ENV = os.environ.get('ENVIRONMENT')
+print(ENV)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'i8kn9svwjh6+rx2lv(!!mtb2dr4b*5acjfus=__mb2c_-93wv0'
+parser = configparser.ConfigParser(allow_no_value=True)
 
 with open(BASE_DIR + '/eurovision_data/secrets/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
     f.close()
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if ENV == 'PRODUCTION':
+    DEBUG = False
+elif ENV == 'DEVELOPMENT':
+    DEBUG = True
+else:
+    raise EnvironmentError('Neither PRODUCTION nor DEVELOPMENT environments detected,'
+                           'you may need to configure the enviroment variable \"ENVIRONMENT\" to be either'
+                           '\"PRODUCTION\" or \"DEVELOPMENT\"')
 
-ALLOWED_HOSTS = []
+if DEBUG:
+    parser.read(BASE_DIR + '/eurovision_data/config/dev.ini')
+    CONFIG_FILE = BASE_DIR + '/eurovision_data/config/dev.ini'
+else:
+    parser.read(BASE_DIR + '/eurovision_data/config/prod.ini')
+    CONFIG_FILE = BASE_DIR + '/eurovision_data/config/prod.ini'
+
+ALLOWED_HOSTS = [parser['DEFAULT']['ALLOWED_HOSTS']]
 
 
 # Application definition
