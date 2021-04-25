@@ -1,7 +1,8 @@
 from django.shortcuts import render
 
-from .eurovision_youtube_counter.src import plot_data as plot_data, db_connect as db
-from .eurovision_youtube_counter.src.data_handling import EuroData
+from .eurovision_youtube_counter.src import db_connect as db
+from eurovision_data.video_data.services import plot_data as plot_data
+from eurovision_data.video_data.services.data_handling import EuroData
 
 
 def index(request):

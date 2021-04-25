@@ -1,11 +1,8 @@
-import json
-
 #import eurovision_youtube_counter.db_connection_test as db
 #import eurovision_data.video_data.eurovision_youtube_counter.src.db_connection_test as db
 #import eurovision_data.video_data.eurovision_youtube_counter.src.youtube_view_count_v0_2 as eurocount
 import src.db_connect as db
-import src.youtube_view_count_v0_2 as eurocount
-import src.plot_data as plot_data
+import eurovision_data.video_data.services.plot_data as plot_data
 
 
 def main():

@@ -5,7 +5,7 @@ from pprint import pprint
 import os
 
 from .eurovision_youtube_counter.src import db_connect as db
-from .eurovision_youtube_counter.src.video_json_connect import get_video_urls
+from eurovision_data.video_data.services.video_json_connect import get_video_urls
 
 
 class JsonTests(TestCase):
