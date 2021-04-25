@@ -13,8 +13,7 @@
     </div>
     <div id="graph-options-container">
         <span><b>Change graph:</b></span>
-        <form action="{% url 'video_data:plot-data-year' year %}" method="post">
-            {% csrf_token %}
+        <form action="{% url 'video_data:plot-data-year' year %}" method="get">
             <label>
                 <select name="y_axis_choices">
                     {% for choice in y_axis_possibilities %}

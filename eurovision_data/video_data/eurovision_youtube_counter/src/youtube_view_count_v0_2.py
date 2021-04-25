@@ -1,11 +1,14 @@
 #! python3
 # -*- coding: utf-8 -*-
 
-from apiclient.discovery import build
-from apiclient.errors import HttpError
-from oauth2client.tools import argparser
+#from apiclient.discovery import build
+from googleapiclient.discovery import build
+#from apiclient.errors import HttpError
+from googleapiclient.errors import HttpError
+#from oauth2client.tools import argparser
 import datetime
-from . import db_connect
+#from . import db_connect
+import db_connect
 
 
 # This function is a little misleading, it's input is only a single video_id and it returns data on a single video,
@@ -26,7 +29,7 @@ def videos_list_by_id(part, video_id):
     # Youtube API -----------------------------------------------------
     #developer_key = "AIzaSyAtKot3NSpIBTbUHziloc9TddNdo9qNzRU"  # My youtube developer key.
     #developer_key = "AIzaSyCo9i6Nf0sxnLmHbul2c8UKkLAX_gP4_qE"
-    developer_key = "AIzaSyBfS8MOwzmxdcwCIIZ0X6-xm5arAS9umZo"
+    developer_key = "AIzaSyBHSwf1wPOysU8jh9o5kWE7cd5kmhLxF34"
     api_service_name = "youtube"  # The name of the API that's being called.
     api_version = "v3"  # The version of the API that't being used.
     # Youtube API -----------------------------------------------------
@@ -140,7 +143,7 @@ def main():
 
     list_type = 'Euro semi finals 1'
     video_dict = create_video_dict(list_type, video_links_list)
-    db_connect.store_data(video_dict)
+    #db_connect.store_data(video_dict)
 
     video_links_list2 = [
         'https://www.youtube.com/watch?v=clltO-wwfRE',
@@ -156,7 +159,8 @@ def main():
     ]
     list_type = 'Euro semi finals 2'
     video_dict2 = create_video_dict(list_type, video_links_list2)
-    db_connect.store_data(video_dict2)
+    print(video_dict2)
+    #db_connect.store_data(video_dict2)
     db_connect.read_data()
     print('finished')
 
