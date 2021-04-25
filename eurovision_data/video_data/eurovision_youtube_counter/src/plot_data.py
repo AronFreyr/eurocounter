@@ -30,8 +30,8 @@ def create_graph(data_from_db, y_value='views', year=None):
         value_dict[name]['type'].append(x.get_description())
         value_dict[name]['likes'].append(x.get_likes())
         value_dict[name]['dislikes'].append(x.get_dislikes())
-        value_dict[name]['comment_count'].append(x.get_likes() / x.get_dislikes())
-        #value_dict[name]['comment_count'].append(x.get_comments())
+        #value_dict[name]['comment_count'].append(x.get_likes() / x.get_dislikes())
+        value_dict[name]['comment_count'].append(x.get_comments())
 
     config = {'scrollZoom': True, 'displayModeBar': True, 'showLink': False,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that

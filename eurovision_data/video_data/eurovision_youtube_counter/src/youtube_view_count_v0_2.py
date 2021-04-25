@@ -1,11 +1,8 @@
 #! python3
 # -*- coding: utf-8 -*-
 
-#from apiclient.discovery import build
 from googleapiclient.discovery import build
-#from apiclient.errors import HttpError
-from googleapiclient.errors import HttpError
-#from oauth2client.tools import argparser
+
 import datetime
 #from . import db_connect
 import db_connect
@@ -45,13 +42,38 @@ def videos_list_by_id(part, video_id):
     return results
 
 
+
+def create_video_dict(list_type, video_links_list):
+    """
+    Create a dictionary that contains the data for the Youtube videos.
+    :param list_type:
+    :param video_links_list:
+    :return:
+    """
+    video_dict = {'timestamp': datetime.datetime.now(), 'description': list_type, 'videos': {}}
+
+    for video in video_links_list:
+        video_dict['videos'][video] = {}
+        video_id = video.split('=')[1]  # split the video URL on '=' and use the latter half of the split.
+        video_results = videos_list_by_id('snippet,contentDetails,statistics', video_id)  # Get info on the video.
+
+        video_dict['videos'][video]['views'] = int(video_results['items'][0]['statistics']['viewCount'])
+        video_dict['videos'][video]['likes'] = int(video_results['items'][0]['statistics']['likeCount'])
+        video_dict['videos'][video]['dislikes'] = int(video_results['items'][0]['statistics']['dislikeCount'])
+        video_dict['videos'][video]['comments'] = int(video_results['items'][0]['statistics']['commentCount'])
+        video_dict['videos'][video]['name'] = video_results['items'][0]['snippet']['title']
+    return video_dict
+
+
+
+
 @DeprecationWarning
 def get_video_list(video_links_list):
     """
     Creates the list of videos. A list of videos is simply a list of tuples. Tuples are objects that come in pairs,
     here the pair is 'video name' and 'video view-count'.
     :param video_links_list: A list of youtube links.
-    :return: A list of tuples with name and view-count, sorted in descending order. This is a list of tuples and 
+    :return: A list of tuples with name and view-count, sorted in descending order. This is a list of tuples and
     each tuple has two values, the name of the video and the view-count of the video.
     """
     list_of_videos = []  # Create an initial list of videos and have it empty to begin with.
@@ -66,26 +88,6 @@ def get_video_list(video_links_list):
     # and sorts it in reverse order, so the highest viewed video is first.
     list_of_videos.sort(key=lambda tup: tup[1], reverse=True)
     return list_of_videos
-
-
-def create_video_dict(list_type, video_links_list):
-    """
-    Create a dictionary that contains the data for the Youtube videos.
-    :param list_type:
-    :param video_links_list:
-    :return:
-    """
-    video_dict = {'timestamp': datetime.datetime.now(), 'description': list_type, 'videos': {}}
-    for video in video_links_list:
-        video_dict['videos'][video] = {}
-        video_id = video.split('=')[1]  # split the video URL on '=' and use the latter half of the split.
-        video_results = videos_list_by_id('snippet,contentDetails,statistics', video_id)  # Get info on the video.
-        video_dict['videos'][video]['views'] = int(video_results['items'][0]['statistics']['viewCount'])
-        video_dict['videos'][video]['likes'] = int(video_results['items'][0]['statistics']['likeCount'])
-        video_dict['videos'][video]['dislikes'] = int(video_results['items'][0]['statistics']['dislikeCount'])
-        video_dict['videos'][video]['comments'] = int(video_results['items'][0]['statistics']['commentCount'])
-        video_dict['videos'][video]['name'] = video_results['items'][0]['snippet']['title']
-    return video_dict
 
 
 @DeprecationWarning
