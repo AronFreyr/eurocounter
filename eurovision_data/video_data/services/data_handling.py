@@ -32,6 +32,9 @@ class EuroData:
     def get_description(self):
         return self.description
 
+    def get_proportion(self):
+        return self.likes/self.dislikes
+
     def get_clean_name(self):
         try:
             split_name = self.name.split(' - ')

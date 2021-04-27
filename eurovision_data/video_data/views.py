@@ -22,7 +22,7 @@ def display_plot_year(request, year):
     if year not in ['2017', '2018', '2019']:
         # TODO: more specific error and error description. Also catch the error and display an error page.
         raise ValueError
-    y_axis_possibilities = ['views', 'likes', 'dislikes', 'comment_count']
+    y_axis_possibilities = ['views', 'likes', 'dislikes', 'comment_count', 'likes vs dislikes']
     line_possibilities = ['Semi-finals 1', 'Semi-finals 2', 'Both semi-finals']
     video_desc_list = ['Euro semi finals 1 ' + year, 'Euro semi finals 2 ' + year]
 
