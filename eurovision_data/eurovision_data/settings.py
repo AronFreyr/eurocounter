@@ -24,6 +24,8 @@ ENV = os.environ.get('ENVIRONMENT')
 
 parser = configparser.ConfigParser(allow_no_value=True)
 
+JSON_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/videos.json'
+
 with open(BASE_DIR + '/eurovision_data/secrets/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
     f.close()
