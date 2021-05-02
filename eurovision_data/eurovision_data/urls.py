@@ -18,6 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path(r'video_data/', include('video_data.urls'))
     path(r'eurovision/', include('video_data.urls'))
 ]

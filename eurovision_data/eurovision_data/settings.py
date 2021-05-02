@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_FILE = ''
 
 ENV = os.environ.get('ENVIRONMENT')
-print(ENV)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -35,18 +34,20 @@ elif ENV == 'DEVELOPMENT':
     DEBUG = True
 else:
     raise EnvironmentError('Neither PRODUCTION nor DEVELOPMENT environments detected,'
-                           'you may need to configure the enviroment variable \"ENVIRONMENT\" to be either'
+                           'you may need to configure the enviroment variable \"ENVIRONMENT\" to be either '
                            '\"PRODUCTION\" or \"DEVELOPMENT\"')
 
 if DEBUG:
-    parser.read(BASE_DIR + '/eurovision_data/config/dev.ini')
     CONFIG_FILE = BASE_DIR + '/eurovision_data/config/dev.ini'
+    parser.read(CONFIG_FILE)
 else:
-    parser.read(BASE_DIR + '/eurovision_data/config/prod.ini')
     CONFIG_FILE = BASE_DIR + '/eurovision_data/config/prod.ini'
+    parser.read(CONFIG_FILE)
 
-ALLOWED_HOSTS = [parser['DEFAULT']['ALLOWED_HOSTS']]
+ALLOWED_HOSTS = []
 
+for key, host in parser.items("ALLOWED_HOSTS"):
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 

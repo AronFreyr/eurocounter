@@ -42,7 +42,6 @@ def videos_list_by_id(part, video_id):
     return results
 
 
-
 def create_video_dict(list_type, video_links_list):
     """
     Create a dictionary that contains the data for the Youtube videos.
@@ -63,8 +62,6 @@ def create_video_dict(list_type, video_links_list):
         video_dict['videos'][video]['comments'] = int(video_results['items'][0]['statistics']['commentCount'])
         video_dict['videos'][video]['name'] = video_results['items'][0]['snippet']['title']
     return video_dict
-
-
 
 
 @DeprecationWarning
