@@ -2,3 +2,4 @@ plotly
 django
 apiclient
 google-api-python-client
+gunicorn
