@@ -24,6 +24,8 @@ ENV = os.environ.get('ENVIRONMENT')
 
 parser = configparser.ConfigParser(allow_no_value=True)
 
+JSON_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/videos.json'
+
 with open(BASE_DIR + '/eurovision_data/secrets/secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
     f.close()
@@ -34,17 +36,20 @@ elif ENV == 'DEVELOPMENT':
     DEBUG = True
 else:
     raise EnvironmentError('Neither PRODUCTION nor DEVELOPMENT environments detected,'
-                           'you may need to configure the enviroment variable \"ENVIRONMENT\" to be either'
+                           'you may need to configure the enviroment variable \"ENVIRONMENT\" to be either '
                            '\"PRODUCTION\" or \"DEVELOPMENT\"')
 
 if DEBUG:
-    parser.read(BASE_DIR + '/eurovision_data/config/dev.ini')
     CONFIG_FILE = BASE_DIR + '/eurovision_data/config/dev.ini'
+    parser.read(CONFIG_FILE)
 else:
-    parser.read(BASE_DIR + '/eurovision_data/config/prod.ini')
     CONFIG_FILE = BASE_DIR + '/eurovision_data/config/prod.ini'
+    parser.read(CONFIG_FILE)
 
-ALLOWED_HOSTS = [parser['DEFAULT']['ALLOWED_HOSTS']]
+ALLOWED_HOSTS = []
+
+for key, host in parser.items("ALLOWED_HOSTS"):
+    ALLOWED_HOSTS.append(host)
 
 # Application definition
 

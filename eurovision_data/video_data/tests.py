@@ -5,7 +5,9 @@ from pprint import pprint
 import os
 
 from .eurovision_youtube_counter.src import db_connect as db
-from eurovision_data.video_data.services.video_json_connect import get_video_urls
+#from eurovision_data.video_data.services.video_json_connect import get_video_urls
+from .eurovision_youtube_counter.src.youtube_connector import YoutubeConnect
+from django.conf import settings
 
 
 class JsonTests(TestCase):
@@ -28,11 +30,21 @@ class JsonTests(TestCase):
         for x in data['video_group']:
             print(x['type'])
 
-    def test_call_json_connect(self):
-        get_video_urls()
+#    def test_call_json_connect(self):
+#        get_video_urls()
 
 
 class DatabaseTests(TestCase):
 
     def test_read_from_db(self):
         print(db.read_data())
+
+
+class YoutubeTests(TestCase):
+
+    def test_youtube_class_connection(self):
+        youtube = YoutubeConnect()
+        youtube_video_id = 'clltO-wwfRE'
+        part = 'snippet,contentDetails,statistics'
+        results = youtube.get_video_data(part, youtube_video_id)
+        print(results)

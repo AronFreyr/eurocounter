@@ -20,6 +20,5 @@ handler404 = 'video_data.views.handler404'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path(r'video_data/', include('video_data.urls'))
     path(r'eurovision/', include('video_data.urls'))
 ]
