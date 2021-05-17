@@ -17,6 +17,10 @@ def display_plot(request):
     return render(request, 'video_data/plot.html', {'plot': plot_as_div})
 
 
+def covid_year(request):
+    return render(request, 'video_data/2020.html')
+
+
 def display_plot_year(request, year):
 
     if year not in ['2017', '2018', '2019']:

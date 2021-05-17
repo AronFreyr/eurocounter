@@ -2,6 +2,7 @@
 **/__pycache__
 *.pyc
 **/venv
+**/.venv
 **/eurovision_youtube_counter/database
 **/secrets
 **/config
