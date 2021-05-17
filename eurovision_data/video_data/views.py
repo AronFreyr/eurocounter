@@ -3,6 +3,15 @@ from django.shortcuts import render
 from .eurovision_youtube_counter.src import db_connect as db
 from .services import plot_data
 from .services.data_handling import EuroData
+from django.shortcuts import render
+from django.template import RequestContext
+
+
+def handler404(request, exception):
+    context = {}
+    response = render(request, "video_data/error.html", context=context)
+    response.status_code = 404
+    return response
 
 
 def index(request):

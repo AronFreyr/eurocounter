@@ -18,7 +18,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CONFIG_FILE = ''
 
 ENV = os.environ.get('ENVIRONMENT')
-print(ENV)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
@@ -46,7 +45,6 @@ else:
     CONFIG_FILE = BASE_DIR + '/eurovision_data/config/prod.ini'
 
 ALLOWED_HOSTS = [parser['DEFAULT']['ALLOWED_HOSTS']]
-
 
 # Application definition
 
