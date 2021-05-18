@@ -147,5 +147,12 @@
 	{"link": "https://www.youtube.com/watch?v=g8wx7BRfqSI"}
       ]
     }
-  ]
+  ],
+  "eurovision_grand_final_dates": {
+    "2017": "2017-05-13",
+    "2018": "2018-05-12",
+    "2019": "2019-05-18",
+    "2020": "None",
+    "2021": "2021-05-22"
+  }
 }

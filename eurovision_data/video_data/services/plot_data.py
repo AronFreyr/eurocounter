@@ -1,7 +1,9 @@
 import plotly as py
 import plotly.graph_objs as go
-
 import datetime
+import json
+
+from django.conf import settings
 
 
 def create_graph(data_from_db, y_value='views', year=None):
@@ -9,10 +11,7 @@ def create_graph(data_from_db, y_value='views', year=None):
     if not data_from_db:
         return 'No data was found.'
 
-    # TODO: Final dates should be stored somewhere better, maybe in a database, maybe JSON.
-    finals_dates = {'2017': datetime.datetime(day=13, month=5, year=2017, hour=19),
-                    '2018': datetime.datetime(day=12, month=5, year=2018, hour=19),
-                    '2019': datetime.datetime(day=18, month=5, year=2019, hour=19)}
+    finals_dates = _get_eurovision_finals_dates()
 
     value_dict = {x.get_clean_name(): {'views': [], 'likes': [],
                                        'dislikes': [], 'comment_count': [],
@@ -103,6 +102,20 @@ def _define_graph_layout(year, y_value):
         )
     )
     return layout
+
+
+def _get_eurovision_finals_dates():
+    """ Gets the date of every Eurovision final from the JSON and returns it as a dict. """
+    with open(settings.JSON_LOCATION) as f:
+        json_data = json.load(f)
+    finals_data = json_data['eurovision_grand_final_dates']
+    finals_dates = {}
+    for key, value in finals_data.items():
+        if value != 'None':
+            finals_dates[key] = datetime.datetime.strptime(value + ' 19', '%Y-%m-%d %H')
+        else:
+            finals_dates[key] = value
+    return finals_dates
 
 
 @DeprecationWarning

@@ -3,6 +3,15 @@ from django.shortcuts import render
 from .eurovision_youtube_counter.src import db_connect as db
 from .services import plot_data
 from .services.data_handling import EuroData
+from django.shortcuts import render
+from django.template import RequestContext
+
+
+def handler404(request, exception):
+    context = {}
+    response = render(request, "video_data/error.html", context=context)
+    response.status_code = 404
+    return response
 
 
 def index(request):
@@ -15,6 +24,10 @@ def display_plot(request):
     data_from_db = db.read_data()
     plot_as_div = plot_data.create_graph(data_from_db)
     return render(request, 'video_data/plot.html', {'plot': plot_as_div})
+
+
+def covid_year(request):
+    return render(request, 'video_data/2020.html')
 
 
 def display_plot_year(request, year):

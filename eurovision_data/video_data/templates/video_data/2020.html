@@ -1,0 +1,19 @@
+{% extends 'video_data/base.html' %}
+{% load static %}
+
+{% block title %} 2020 {% endblock title %}
+{% block nav-style %}mkt-nav{% endblock nav-style %}
+{% block head_css_page %}
+    <link href="{% static 'video_data/css/2020.css' %}" rel="stylesheet" media="screen">
+{% endblock head_css_page %}
+{% block content %}
+    <div id="dadi-container">
+        <h1>Við unnum!</h1>
+        <div id="dadi-video-container">
+            <iframe width="1120" height="630" src="https://www.youtube.com/embed/VFZNvj-HfBU" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+{% endblock content %}

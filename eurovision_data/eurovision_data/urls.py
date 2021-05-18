@@ -16,8 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+handler404 = 'video_data.views.handler404'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path(r'video_data/', include('video_data.urls'))
     path(r'eurovision/', include('video_data.urls'))
 ]
