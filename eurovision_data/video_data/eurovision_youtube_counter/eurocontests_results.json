@@ -1,0 +1,877 @@
+{
+	"eurovision_final_results": [
+		{
+			"year": "2017",
+	 		"countries": [
+	 			 {
+	 			 "country_name": "Portugal",
+				 "song_name": "Amar Pelos Dois",
+				 "artist_name": "Salvador Sobral",
+				 "jury_points": "382",
+				 "tele_points": "376",
+				 "total_points": "758",
+				 "jury_ranking": "1",
+				 "tele_ranking": "1",
+				 "total_ranking": "1"
+				 },
+				 {
+				 "country_name": "Bulgaria",
+				 "song_name": "Beautiful Mess",
+				 "artist_name": "Kristian Kostov",
+				 "jury_points": "278",
+				 "tele_points": "337",
+				 "total_points": "615",
+				 "jury_ranking": "2",
+				 "tele_ranking": "2",
+				 "total_ranking": "2"
+				 },
+				 {
+				 "country_name": "Moldova",
+				 "song_name": "Hey Mamma",
+				 "artist_name": "Sunstroke Project",
+				 "jury_points": "110",
+				 "tele_points": "264",
+				 "total_points": "374",
+				 "jury_ranking": "8",
+				 "tele_ranking": "3",
+				 "total_ranking": "3"
+				 },
+				 {
+				 "country_name": "Belgium",
+				 "song_name": "City Lights",
+				 "artist_name": "Blanche",
+				 "jury_points": "108",
+				 "tele_points": "255",
+				 "total_points": "363",
+				 "jury_ranking": "9",
+				 "tele_ranking": "4",
+				 "total_ranking": "4"
+				 },
+				 {
+				 "country_name": "Sweden",
+				 "song_name": "I Can't Go On",
+				 "artist_name": "Robin Bengtsson",
+				 "jury_points": "218",
+				 "tele_points": "126",
+				 "total_points": "344",
+				 "jury_ranking": "3",
+				 "tele_ranking": "8",
+				 "total_ranking": "5"
+				 },
+				 {
+				 "country_name": "Italy",
+				 "song_name": "Occidentali's Karma",
+				 "artist_name": "Francesco Gabbani",
+				 "jury_points": "126",
+				 "tele_points": "208",
+				 "total_points": "334",
+				 "jury_ranking": "7",
+				 "tele_ranking": "6",
+				 "total_ranking": "6"
+				 },
+				 {
+				 "country_name": "Romania",
+				 "song_name": "Yodel It!",
+				 "artist_name": "Ilinca ft. Alex Florea",
+				 "jury_points": "58",
+				 "tele_points": "224",
+				 "total_points": "282",
+				 "jury_ranking": "14",
+				 "tele_ranking": "5",
+				 "total_ranking": "7"
+				 },
+				 {
+				 "country_name": "Hungary",
+				 "song_name": "Origo",
+				 "artist_name": "Joci Pápai",
+				 "jury_points": "48",
+				 "tele_points": "152",
+				 "total_points": "200",
+				 "jury_ranking": "17",
+				 "tele_ranking": "7",
+				 "total_ranking": "8"
+				 },
+				 {
+				 "country_name": "Australia",
+				 "song_name": "Don't Come Easy",
+				 "artist_name": "Isaiah",
+				 "jury_points": "171",
+				 "tele_points": "2",
+				 "total_points": "173",
+				 "jury_ranking": "4",
+				 "tele_ranking": "25",
+				 "total_ranking": "9"
+				 },
+				 {
+				 "country_name": "Norway",
+				 "song_name": "Grab The Moment",
+				 "artist_name": "JOWST",
+				 "jury_points": "129",
+				 "tele_points": "29",
+				 "total_points": "158",
+				 "jury_ranking": "6",
+				 "tele_ranking": "15",
+				 "total_ranking": "10"
+				 },
+				 {
+				 "country_name": "Netherlands",
+				 "song_name": "Lights and Shadows",
+				 "artist_name": "OG3NE",
+				 "jury_points": "135",
+				 "tele_points": "15",
+				 "total_points": "150",
+				 "jury_ranking": "5",
+				 "tele_ranking": "19",
+				 "total_ranking": "11"
+				 },
+				 {
+				 "country_name": "France",
+				 "song_name": "Requiem",
+				 "artist_name": "Alma",
+				 "jury_points": "45",
+				 "tele_points": "90",
+				 "total_points": "135",
+				 "jury_ranking": "19",
+				 "tele_ranking": "10",
+				 "total_ranking": "12"
+				 },
+				 {
+				 "country_name": "Croatia",
+				 "song_name": "My Friend",
+				 "artist_name": "Jacques Houdek",
+				 "jury_points": "25",
+				 "tele_points": "103",
+				 "total_points": "128",
+				 "jury_ranking": "22",
+				 "tele_ranking": "9",
+				 "total_ranking": "13"
+				 },
+				 {
+				 "country_name": "Azerbaijan",
+				 "song_name": "Skeletons",
+				 "artist_name": "Dihaj",
+				 "jury_points": "78",
+				 "tele_points": "42",
+				 "total_points": "120",
+				 "jury_ranking": "12",
+				 "tele_ranking": "11",
+				 "total_ranking": "14"
+				 },
+				 {
+				 "country_name": "United Kingdom",
+				 "song_name": "Never Give Up On You",
+				 "artist_name": "Lucie Jones",
+				 "jury_points": "99",
+				 "tele_points": "12",
+				 "total_points": "111",
+				 "jury_ranking": "10",
+				 "tele_ranking": "20",
+				 "total_ranking": "15"
+				 },
+				 {
+				 "country_name": "Austria",
+				 "song_name": "Running On Air",
+				 "artist_name": "Nathan Trent",
+				 "jury_points": "93",
+				 "tele_points": "0",
+				 "total_points": "93",
+				 "jury_ranking": "11",
+				 "tele_ranking": "26",
+				 "total_ranking": "16"
+				 },
+				 {
+				 "country_name": "Belarus",
+				 "song_name": "Story of My Life",
+				 "artist_name": "Naviband",
+				 "jury_points": "50",
+				 "tele_points": "33",
+				 "total_points": "83",
+				 "jury_ranking": "16",
+				 "tele_ranking": "13",
+				 "total_ranking": "17"
+				 },
+				 {
+				 "country_name": "Armenia",
+				 "song_name": "Fly With Me",
+				 "artist_name": "Artsvik",
+				 "jury_points": "58",
+				 "tele_points": "21",
+				 "total_points": "79",
+				 "jury_ranking": "14",
+				 "tele_ranking": "18",
+				 "total_ranking": "18"
+				 },
+				 {
+				 "country_name": "Greece",
+				 "song_name": "This is Love",
+				 "artist_name": "Demy",
+				 "jury_points": "48",
+				 "tele_points": "29",
+				 "total_points": "77",
+				 "jury_ranking": "17",
+				 "tele_ranking": "15",
+				 "total_ranking": "19"
+				 },
+				 {
+				 "country_name": "Denmark",
+				 "song_name": "Where I Am",
+				 "artist_name": "Anja",
+				 "jury_points": "69",
+				 "tele_points": "8",
+				 "total_points": "77",
+				 "jury_ranking": "13",
+				 "tele_ranking": "21",
+				 "total_ranking": "20"
+				 },
+				 {
+				 "country_name": "Cyprus",
+				 "song_name": "Gravity",
+				 "artist_name": "Hovig",
+				 "jury_points": "36",
+				 "tele_points": "32",
+				 "total_points": "68",
+				 "jury_ranking": "20",
+				 "tele_ranking": "14",
+				 "total_ranking": "21"
+				 },
+				 {
+				 "country_name": "Poland",
+				 "song_name": "Flashlight",
+				 "artist_name": "Kasia Mos",
+				 "jury_points": "23",
+				 "tele_points": "41",
+				 "total_points": "64",
+				 "jury_ranking": "23",
+				 "tele_ranking": "12",
+				 "total_ranking": "22"
+				 },
+				 {
+				 "country_name": "Israel",
+				 "song_name": "I Feel Alive",
+				 "artist_name": "IMRI",
+				 "jury_points": "34",
+				 "tele_points": "5",
+				 "total_points": "39",
+				 "jury_ranking": "21",
+				 "tele_ranking": "22",
+				 "total_ranking": "23"
+				 },
+				 {
+				 "country_name": "Ukraine",
+				 "song_name": "Time",
+				 "artist_name": "O.Torvald",
+				 "jury_points": "12",
+				 "tele_points": "24",
+				 "total_points": "36",
+				 "jury_ranking": "24",
+				 "tele_ranking": "17",
+				 "total_ranking": "24"
+				 },
+				 {
+				 "country_name": "Germany",
+				 "song_name": "Perfect Life",
+				 "artist_name": "Levina",
+				 "jury_points": "3",
+				 "tele_points": "3",
+				 "total_points": "6",
+				 "jury_ranking": "25",
+				 "tele_ranking": "24",
+				 "total_ranking": "25"
+				 },
+				 {
+				 "country_name": "Spain",
+				 "song_name": "Do It For Your Lover",
+				 "artist_name": "Manel Navarro",
+				 "jury_points": "0",
+				 "tele_points": "5",
+				 "total_points": "5",
+				 "jury_ranking": "26",
+				 "tele_ranking": "22",
+				 "total_ranking": "26"}
+				]
+				}
+				,
+				 {
+				 	"year": "2018"
+				 	,"countries": [
+				 	{
+				 "country_name": "Israel",
+				 "song_name": "TOY",
+				 "artist_name": "Netta",
+				 "jury_points": "212",
+				 "tele_points": "317",
+				 "total_points": "529",
+				 "jury_ranking": "3",
+				 "tele_ranking": "1",
+				 "total_ranking": "1"
+				 },
+				 {
+				 "country_name": "Cyprus",
+				 "song_name": "Fuego",
+				 "artist_name": "Eleni Foureira",
+				 "jury_points": "183",
+				 "tele_points": "253",
+				 "total_points": "436",
+				 "jury_ranking": "5",
+				 "tele_ranking": "2",
+				 "total_ranking": "2"
+				 },
+				 {
+				 "country_name": "Austria",
+				 "song_name": "Nobody But You",
+				 "artist_name": "Cesár Sampson",
+				 "jury_points": "271",
+				 "tele_points": "71",
+				 "total_points": "342",
+				 "jury_ranking": "1",
+				 "tele_ranking": "13",
+				 "total_ranking": "3"
+				 },
+				 {
+				 "country_name": "Germany",
+				 "song_name": "You Let Me Walk Alone",
+				 "artist_name": "Michael Schulte",
+				 "jury_points": "204",
+				 "tele_points": "136",
+				 "total_points": "340",
+				 "jury_ranking": "4",
+				 "tele_ranking": "6",
+				 "total_ranking": "4"
+				 },
+				 {
+				 "country_name": "Italy",
+				 "song_name": "Non Mi Avete Fatto Niente",
+				 "artist_name": "Ermal Meta e Fabrizio Moro",
+				 "jury_points": "59",
+				 "tele_points": "249",
+				 "total_points": "308",
+				 "jury_ranking": "17",
+				 "tele_ranking": "3",
+				 "total_ranking": "5"
+				 },
+				 {
+				 "country_name": "Czech Republic",
+				 "song_name": "Lie To Me",
+				 "artist_name": "Mikolas Josef",
+				 "jury_points": "66",
+				 "tele_points": "215",
+				 "total_points": "281",
+				 "jury_ranking": "15",
+				 "tele_ranking": "4",
+				 "total_ranking": "6"
+				 },
+				 {
+				 "country_name": "Sweden",
+				 "song_name": "Dance You Off",
+				 "artist_name": "Benjamin Ingrosso",
+				 "jury_points": "253",
+				 "tele_points": "21",
+				 "total_points": "274",
+				 "jury_ranking": "2",
+				 "tele_ranking": "23",
+				 "total_ranking": "7"
+				 },
+				 {
+				 "country_name": "Estonia",
+				 "song_name": "La Forza",
+				 "artist_name": "Elina Nechayeva",
+				 "jury_points": "143",
+				 "tele_points": "102",
+				 "total_points": "245",
+				 "jury_ranking": "6",
+				 "tele_ranking": "9",
+				 "total_ranking": "8"
+				 },
+				 {
+				 "country_name": "Denmark",
+				 "song_name": "Higher Ground",
+				 "artist_name": "Rasmussen",
+				 "jury_points": "38",
+				 "tele_points": "188",
+				 "total_points": "226",
+				 "jury_ranking": "21",
+				 "tele_ranking": "5",
+				 "total_ranking": "9"
+				 },
+				 {
+				 "country_name": "Moldova",
+				 "song_name": "My Lucky Day",
+				 "artist_name": "DoReDos",
+				 "jury_points": "94",
+				 "tele_points": "115",
+				 "total_points": "209",
+				 "jury_ranking": "10",
+				 "tele_ranking": "8",
+				 "total_ranking": "10"
+				 },
+				 {
+				 "country_name": "Albania",
+				 "song_name": "Mall",
+				 "artist_name": "Eugent Bushpepa",
+				 "jury_points": "126",
+				 "tele_points": "58",
+				 "total_points": "184",
+				 "jury_ranking": "7",
+				 "tele_ranking": "18",
+				 "total_ranking": "11"
+				 },
+				 {
+				 "country_name": "Lithuania",
+				 "song_name": "When We're Old",
+				 "artist_name": "Ieva Zasimauskaité",
+				 "jury_points": "90",
+				 "tele_points": "91",
+				 "total_points": "181",
+				 "jury_ranking": "11",
+				 "tele_ranking": "10",
+				 "total_ranking": "12"
+				 },
+				 {
+				 "country_name": "France",
+				 "song_name": "Mercy",
+				 "artist_name": "Madame Monsieur",
+				 "jury_points": "114",
+				 "tele_points": "59",
+				 "total_points": "173",
+				 "jury_ranking": "8",
+				 "tele_ranking": "17",
+				 "total_ranking": "13"
+				 },
+				 {
+				 "country_name": "Bulgaria",
+				 "song_name": "Bones",
+				 "artist_name": "EQUINOX",
+				 "jury_points": "100",
+				 "tele_points": "66",
+				 "total_points": "166",
+				 "jury_ranking": "9",
+				 "tele_ranking": "14",
+				 "total_ranking": "14"
+				 },
+				 {
+				 "country_name": "Norway",
+				 "song_name": "That's How You Write A Song",
+				 "artist_name": "Alexander Rybak",
+				 "jury_points": "60",
+				 "tele_points": "84",
+				 "total_points": "144",
+				 "jury_ranking": "16",
+				 "tele_ranking": "11",
+				 "total_ranking": "15"
+				 },
+				 {
+				 "country_name": "Ireland",
+				 "song_name": "Together",
+				 "artist_name": "Ryan O'Shaughnessy",
+				 "jury_points": "74",
+				 "tele_points": "62",
+				 "total_points": "136",
+				 "jury_ranking": "14",
+				 "tele_ranking": "16",
+				 "total_ranking": "16"
+				 },
+				 {
+				 "country_name": "Ukraine",
+				 "song_name": "Under The Ladder",
+				 "artist_name": "MELOVIN",
+				 "jury_points": "11",
+				 "tele_points": "119",
+				 "total_points": "130",
+				 "jury_ranking": "26",
+				 "tele_ranking": "7",
+				 "total_ranking": "17"
+				 },
+				 {
+				 "country_name": "Netherlands",
+				 "song_name": "Outlaw In 'Em",
+				 "artist_name": "Waylon",
+				 "jury_points": "89",
+				 "tele_points": "32",
+				 "total_points": "121",
+				 "jury_ranking": "13",
+				 "tele_ranking": "19",
+				 "total_ranking": "18"
+				 },
+				 {
+				 "country_name": "Serbia",
+				 "song_name": "Nova Deca",
+				 "artist_name": "Sanja Ilic & Balkanika",
+				 "jury_points": "38",
+				 "tele_points": "75",
+				 "total_points": "113",
+				 "jury_ranking": "20",
+				 "tele_ranking": "12",
+				 "total_ranking": "19"
+				 },
+				 {
+				 "country_name": "Australia",
+				 "song_name": "We Got Love",
+				 "artist_name": "Jessica Mauboy",
+				 "jury_points": "90",
+				 "tele_points": "9",
+				 "total_points": "99",
+				 "jury_ranking": "12",
+				 "tele_ranking": "26",
+				 "total_ranking": "20"
+				 },
+				 {
+				 "country_name": "Hungary",
+				 "song_name": "Viszlát Nyár",
+				 "artist_name": "AWS",
+				 "jury_points": "28",
+				 "tele_points": "65",
+				 "total_points": "93",
+				 "jury_ranking": "22",
+				 "tele_ranking": "15",
+				 "total_ranking": "21"
+				 },
+				 {
+				 "country_name": "Slovenia",
+				 "song_name": "Hvala",
+				 "artist_name": "Lea Sirk",
+				 "jury_points": "41",
+				 "tele_points": "23",
+				 "total_points": "64",
+				 "jury_ranking": "19",
+				 "tele_ranking": "22",
+				 "total_ranking": "22"
+				 },
+				 {
+				 "country_name": "Spain",
+				 "song_name": "Tu Canción",
+				 "artist_name": "Amaia y Alfred",
+				 "jury_points": "43",
+				 "tele_points": "18",
+				 "total_points": "61",
+				 "jury_ranking": "18",
+				 "tele_ranking": "24",
+				 "total_ranking": "23"
+				 },
+				 {
+				 "country_name": "United Kingdom",
+				 "song_name": "Storm",
+				 "artist_name": "SuRie",
+				 "jury_points": "23",
+				 "tele_points": "25",
+				 "total_points": "48",
+				 "jury_ranking": "23",
+				 "tele_ranking": "20",
+				 "total_ranking": "24"
+				 },
+				 {
+				 "country_name": "Finland",
+				 "song_name": "Monsters",
+				 "artist_name": "Saara Aalto",
+				 "jury_points": "23",
+				 "tele_points": "23",
+				 "total_points": "46",
+				 "jury_ranking": "24",
+				 "tele_ranking": "21",
+				 "total_ranking": "25"
+				 },
+				 {
+				 "country_name": "Portugal",
+				 "song_name": "O Jardim",
+				 "artist_name": "Cláudia Pascoal",
+				 "jury_points": "21",
+				 "tele_points": "18",
+				 "total_points": "39",
+				 "jury_ranking": "25",
+				 "tele_ranking": "25",
+				 "total_ranking": "26"}
+				]
+				}
+				,
+				 {
+				 	"year": "2019"
+				 	,"countries": [
+				 	{
+				 "country_name": "Netherlands",
+				 "song_name": "Arcade",
+				 "artist_name": "Duncan Laurence",
+				 "jury_points": "237",
+				 "tele_points": "261",
+				 "total_points": "498",
+				 "jury_ranking": "3",
+				 "tele_ranking": "2",
+				 "total_ranking": "1"
+				 },
+				 {
+				 "country_name": "Italy",
+				 "song_name": "Soldi",
+				 "artist_name": "Mahmood",
+				 "jury_points": "219",
+				 "tele_points": "253",
+				 "total_points": "472",
+				 "jury_ranking": "4",
+				 "tele_ranking": "3",
+				 "total_ranking": "2"
+				 },
+				 {
+				 "country_name": "Russia",
+				 "song_name": "Scream",
+				 "artist_name": "Sergey Lazarev",
+				 "jury_points": "126",
+				 "tele_points": "244",
+				 "total_points": "370",
+				 "jury_ranking": "9",
+				 "tele_ranking": "4",
+				 "total_ranking": "3"
+				 },
+				 {
+				 "country_name": "Switzerland",
+				 "song_name": "She Got Me",
+				 "artist_name": "Luca Hänni",
+				 "jury_points": "152",
+				 "tele_points": "212",
+				 "total_points": "364",
+				 "jury_ranking": "7",
+				 "tele_ranking": "5",
+				 "total_ranking": "4"
+				 },
+				 {
+				 "country_name": "Sweden",
+				 "song_name": "Too Late For Love",
+				 "artist_name": "John Lundvik",
+				 "jury_points": "241",
+				 "tele_points": "93",
+				 "total_points": "334",
+				 "jury_ranking": "2",
+				 "tele_ranking": "9",
+				 "total_ranking": "5"
+				 },
+				 {
+				 "country_name": "Norway",
+				 "song_name": "Spirit in the Sky",
+				 "artist_name": "KEiiNO",
+				 "jury_points": "40",
+				 "tele_points": "291",
+				 "total_points": "331",
+				 "jury_ranking": "18",
+				 "tele_ranking": "1",
+				 "total_ranking": "6"
+				 },
+				 {
+				 "country_name": "North Macedonia",
+				 "song_name": "Proud",
+				 "artist_name": "Tamara Todevska",
+				 "jury_points": "247",
+				 "tele_points": "58",
+				 "total_points": "305",
+				 "jury_ranking": "1",
+				 "tele_ranking": "12",
+				 "total_ranking": "7"
+				 },
+				 {
+				 "country_name": "Azerbaijan",
+				 "song_name": "Truth",
+				 "artist_name": "Chingiz",
+				 "jury_points": "202",
+				 "tele_points": "100",
+				 "total_points": "302",
+				 "jury_ranking": "5",
+				 "tele_ranking": "8",
+				 "total_ranking": "8"
+				 },
+				 {
+				 "country_name": "Australia",
+				 "song_name": "Zero Gravity",
+				 "artist_name": "Kate Miller-Heidke",
+				 "jury_points": "153",
+				 "tele_points": "131",
+				 "total_points": "284",
+				 "jury_ranking": "6",
+				 "tele_ranking": "7",
+				 "total_ranking": "9"
+				 },
+				 {
+				 "country_name": "Iceland",
+				 "song_name": "Hatrið mun sigra",
+				 "artist_name": "Hatari",
+				 "jury_points": "46",
+				 "tele_points": "186",
+				 "total_points": "232",
+				 "jury_ranking": "16",
+				 "tele_ranking": "6",
+				 "total_ranking": "10"
+				 },
+				 {
+				 "country_name": "Czech Republic",
+				 "song_name": "Friend of a Friend",
+				 "artist_name": "Lake Malawi",
+				 "jury_points": "150",
+				 "tele_points": "7",
+				 "total_points": "157",
+				 "jury_ranking": "8",
+				 "tele_ranking": "24",
+				 "total_ranking": "11"
+				 },
+				 {
+				 "country_name": "Denmark",
+				 "song_name": "Love Is Forever",
+				 "artist_name": "Leonora",
+				 "jury_points": "69",
+				 "tele_points": "51",
+				 "total_points": "120",
+				 "jury_ranking": "12",
+				 "tele_ranking": "15",
+				 "total_ranking": "12"
+				 },
+				 {
+				 "country_name": "Cyprus",
+				 "song_name": "Replay",
+				 "artist_name": "Tamta",
+				 "jury_points": "77",
+				 "tele_points": "32",
+				 "total_points": "109",
+				 "jury_ranking": "11",
+				 "tele_ranking": "20",
+				 "total_ranking": "13"
+				 },
+				 {
+				 "country_name": "Malta",
+				 "song_name": "Chameleon",
+				 "artist_name": "Michela",
+				 "jury_points": "87",
+				 "tele_points": "20",
+				 "total_points": "107",
+				 "jury_ranking": "10",
+				 "tele_ranking": "22",
+				 "total_ranking": "14"
+				 },
+				 {
+				 "country_name": "Slovenia",
+				 "song_name": "Sebi",
+				 "artist_name": "Zala Kralj & Gasper Santl",
+				 "jury_points": "46",
+				 "tele_points": "59",
+				 "total_points": "105",
+				 "jury_ranking": "15",
+				 "tele_ranking": "11",
+				 "total_ranking": "15"
+				 },
+				 {
+				 "country_name": "France",
+				 "song_name": "Roi",
+				 "artist_name": "Bilal Hassani",
+				 "jury_points": "67",
+				 "tele_points": "38",
+				 "total_points": "105",
+				 "jury_ranking": "13",
+				 "tele_ranking": "18",
+				 "total_ranking": "16"
+				 },
+				 {
+				 "country_name": "Albania",
+				 "song_name": "Ktheju tokes",
+				 "artist_name": "Jonida Maliqi",
+				 "jury_points": "43",
+				 "tele_points": "47",
+				 "total_points": "90",
+				 "jury_ranking": "17",
+				 "tele_ranking": "17",
+				 "total_ranking": "17"
+				 },
+				 {
+				 "country_name": "Serbia",
+				 "song_name": "Kruna",
+				 "artist_name": "Nevena Bozovic",
+				 "jury_points": "35",
+				 "tele_points": "54",
+				 "total_points": "89",
+				 "jury_ranking": "19",
+				 "tele_ranking": "13",
+				 "total_ranking": "18"
+				 },
+				 {
+				 "country_name": "San Marino",
+				 "song_name": "Say Na Na Na",
+				 "artist_name": "Serhat",
+				 "jury_points": "12",
+				 "tele_points": "65",
+				 "total_points": "77",
+				 "jury_ranking": "23",
+				 "tele_ranking": "10",
+				 "total_ranking": "19"
+				 },
+				 {
+				 "country_name": "Estonia",
+				 "song_name": "Storm",
+				 "artist_name": "Victor Crone",
+				 "jury_points": "28",
+				 "tele_points": "48",
+				 "total_points": "76",
+				 "jury_ranking": "20",
+				 "tele_ranking": "16",
+				 "total_ranking": "20"
+				 },
+				 {
+				 "country_name": "Greece",
+				 "song_name": "Better Love",
+				 "artist_name": "Katerine Duska",
+				 "jury_points": "50",
+				 "tele_points": "24",
+				 "total_points": "74",
+				 "jury_ranking": "14",
+				 "tele_ranking": "21",
+				 "total_ranking": "21"
+				 },
+				 {
+				 "country_name": "Spain",
+				 "song_name": "La Venda",
+				 "artist_name": "Miki",
+				 "jury_points": "1",
+				 "tele_points": "53",
+				 "total_points": "54",
+				 "jury_ranking": "25",
+				 "tele_ranking": "14",
+				 "total_ranking": "22"
+				 },
+				 {
+				 "country_name": "Israel",
+				 "song_name": "Home",
+				 "artist_name": "Kobi Marimi",
+				 "jury_points": "0",
+				 "tele_points": "35",
+				 "total_points": "35",
+				 "jury_ranking": "26",
+				 "tele_ranking": "19",
+				 "total_ranking": "23"
+				 },
+				 {
+				 "country_name": "Belarus",
+				 "song_name": "Like It",
+				 "artist_name": "ZENA",
+				 "jury_points": "18",
+				 "tele_points": "13",
+				 "total_points": "31",
+				 "jury_ranking": "22",
+				 "tele_ranking": "23",
+				 "total_ranking": "24"
+				 },
+				 {
+				 "country_name": "Germany",
+				 "song_name": "Sister",
+				 "artist_name": "S!sters",
+				 "jury_points": "24",
+				 "tele_points": "0",
+				 "total_points": "24",
+				 "jury_ranking": "21",
+				 "tele_ranking": "26",
+				 "total_ranking": "25"
+				 },
+				 {
+				 "country_name": "United Kingdom",
+				 "song_name": "Bigger Than Us",
+				 "artist_name": "Michael Rice",
+				 "jury_points": "8",
+				 "tele_points": "3",
+				 "total_points": "11",
+				 "jury_ranking": "24",
+				 "tele_ranking": "25",
+				 "total_ranking": "26"
+				 }
+			]
+		}
+	]
+}
