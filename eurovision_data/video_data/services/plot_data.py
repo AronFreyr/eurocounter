@@ -15,7 +15,8 @@ def create_graph(data_from_db, y_value='views', year=None):
 
     value_dict = {x.get_clean_name(): {'views': [], 'likes': [],
                                        'dislikes': [], 'comment_count': [],
-                                       'time': [], 'type': [], 'likes vs dislikes': []} for x in data_from_db}
+                                       'time': [], 'type': [], 'likes vs dislikes': [],
+                                       'Likes per view (%)': []} for x in data_from_db}
                                         # create empty dictionary for videos
 
     while len(data_from_db) > 10000:  # limiting the points displayed on the graph to improve performance.
@@ -30,6 +31,7 @@ def create_graph(data_from_db, y_value='views', year=None):
         value_dict[name]['dislikes'].append(x.get_dislikes())
         value_dict[name]['comment_count'].append(x.get_comments())
         value_dict[name]['likes vs dislikes'].append(x.get_proportion())
+        value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
 
     config = {'scrollZoom': True, 'displayModeBar': True, 'showLink': False,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
