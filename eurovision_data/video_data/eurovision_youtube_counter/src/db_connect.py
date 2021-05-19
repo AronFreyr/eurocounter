@@ -12,7 +12,8 @@ def recreate_database(recreate=False):
     if it is being recreated then it is necessary to delete the tables first and then create the database.
     :return: Nothing
     """
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                           r'../database/euro_counter.sqlite3')
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
@@ -45,7 +46,8 @@ def store_data(data):
     :param data: The data that should be inserted.
     :return: Nothing.
     """
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                           r'../database/euro_counter.sqlite3')
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
 
@@ -84,7 +86,8 @@ def store_data(data):
     
     
 def read_data():
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                           r'../database/euro_counter.sqlite3')
     print('db path: ' + db_path)
 
     conn = sqlite3.connect(db_path)
@@ -110,7 +113,8 @@ def read_data():
 
 
 def read_data_with_video_type(video_type_input_list, year):
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                           r'../database/euro_counter.sqlite3')
 
     # Cutoff point for the relevant data, later data is irrelevant.
     last_relevant_date = datetime(year=int(year), month=5, day=22)
@@ -150,7 +154,8 @@ def read_data_with_year(year_input):
     last_date = datetime(year=int(year_input), month=12, day=31)
     print('last_date:', last_date)
 
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../database/euro_counter.sqlite3')
+    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                           r'../database/euro_counter.sqlite3')
 
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
