@@ -13,7 +13,8 @@ def run_cron():
         data = json.load(f)
         f.close()
 
-    youtube = YoutubeConnect(config_location='../../eurovision_data/config/cron.ini')
+    conf_location = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../../eurovision_data/config/cron.ini')
+    youtube = YoutubeConnect(config_location=conf_location)
     for video_groups in data['video_group']:
         link_list = [video_info['link'] for video_info in video_groups['videos']
                      if video_groups['type'] == 'Euro semi finals 1 2021'
