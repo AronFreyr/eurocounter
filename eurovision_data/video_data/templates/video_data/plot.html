@@ -73,13 +73,6 @@
     <script src="{% static 'video_data/jquery/jquery.min.js' %}" crossorigin="anonymous"></script>
     <script src="{% static 'video_data/js/datatables/datatables.min.js' %}" crossorigin="anonymous"></script>
     <script>
-        {% comment %}
-    $("#table-container").onload = function(resp, status, xhr) {
-        console.log("test");
-        if(status === "success")
-            $("#country-result-table").DataTable({"order": [[3, "desc"]]});
-    };
-    {% endcomment %}
     $("#country-result-table").DataTable({"order": [[3, "asc"]]});
     </script>
 {% endblock footer_javascript %}
