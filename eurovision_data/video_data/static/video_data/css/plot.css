@@ -10,3 +10,7 @@
 table, td{
     border: 1px solid black;
 }
+
+#table-container {
+    padding-top: 2%;
+}
