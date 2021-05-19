@@ -30,6 +30,21 @@ class JsonTests(TestCase):
         for x in data['video_group']:
             print(x['type'])
 
+    def test_read_json_result_file(self):
+        file_path = os.path.join(os.path.abspath(''), r'video_data/eurovision_youtube_counter/eurocontests_results.json')
+
+        with open(file_path) as f:
+            data = json.load(f)
+        country_list = []
+        for period in data['eurovision_final_results']:
+            year = period['year']
+            print(f'year: {year}')
+            for country in period['countries']:
+                print(country)
+                #print('country: ' + country['country_name'])
+                #print('jury_ranking: ' + country['jury_ranking'])
+                #print('tele_ranking: ' + country['tele_ranking'])
+
 #    def test_call_json_connect(self):
 #        get_video_urls()
 

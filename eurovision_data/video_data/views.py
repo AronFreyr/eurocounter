@@ -4,6 +4,8 @@ from .eurovision_youtube_counter.src import db_connect as db
 from .services import plot_data
 from .services.data_handling import EuroData
 from django.shortcuts import render
+from django.conf import settings
+import json
 from django.template import RequestContext
 
 
@@ -57,6 +59,14 @@ def display_plot_year(request, year):
             else:
                 raise ValueError
 
+    country_list = []
+    with open(settings.JSON_CONTEST_RESULTS_LOCATION, encoding='utf8') as f:
+        json_data = json.load(f)
+    for period in json_data['eurovision_final_results']:
+        if year == period['year']:
+            country_list = period['countries']
+    #countries = json_data['eurovision_final_results']
+
     euro_object_list = []
     data_from_db = db.read_data_with_video_type(video_desc_list, year)
 
@@ -70,4 +80,5 @@ def display_plot_year(request, year):
                                                     'y_axis_possibilities': y_axis_possibilities,
                                                     'y_axis_choice': y_axis,
                                                     'line_choices': line_possibilities,
-                                                    'line_choice': line_choice})
+                                                    'line_choice': line_choice,
+                                                    'country_list': country_list})

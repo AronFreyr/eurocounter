@@ -5,6 +5,7 @@
 {% block nav-style %}mkt-nav{% endblock nav-style %}
 {% block head_css_page %}
     <link href="{% static 'video_data/css/plot.css' %}" rel="stylesheet" media="screen">
+    <link href="{% static 'video_data/js/datatables/datatables.min.css' %}" rel="stylesheet" media="screen">
 {% endblock head_css_page %}
 {% block content %}
 <div id="data-container">
@@ -31,5 +32,53 @@
             <button type="submit" class="btn btn-secondary" value="Change y-axis">Submit</button>
         </form>
     </div>
+    {% if country_list %}
+        <div id="table-container">
+            <table id="country-result-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Song</th>
+                        <th>Artist</th>
+                        <th>Total Ranking</th>
+                        <th>Televote Ranking</th>
+                        <th>Jury Ranking</th>
+                        <th>Total Points</th>
+                        <th>Televote Points</th>
+                        <th>Jury Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for country in country_list %}
+                        <tr>
+                            <td>{{ country.country_name }}</td>
+                            <td>{{ country.song_name }}</td>
+                            <td>{{ country.artist_name }}</td>
+                            <td>{{ country.total_ranking }}</td>
+                            <td>{{ country.tele_ranking }}</td>
+                            <td>{{ country.jury_ranking }}</td>
+                            <td>{{ country.total_points }}</td>
+                            <td>{{ country.tele_points }}</td>
+                            <td>{{ country.jury_points }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% endif %}
 </div>
 {% endblock content %}
+{% block footer_javascript %}
+    <script src="{% static 'video_data/jquery/jquery.min.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'video_data/js/datatables/datatables.min.js' %}" crossorigin="anonymous"></script>
+    <script>
+        {% comment %}
+    $("#table-container").onload = function(resp, status, xhr) {
+        console.log("test");
+        if(status === "success")
+            $("#country-result-table").DataTable({"order": [[3, "desc"]]});
+    };
+    {% endcomment %}
+    $("#country-result-table").DataTable({"order": [[3, "asc"]]});
+    </script>
+{% endblock footer_javascript %}
