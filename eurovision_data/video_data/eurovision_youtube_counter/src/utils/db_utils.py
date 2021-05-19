@@ -5,7 +5,8 @@ import sqlite3
 # Don't use again, it worked successfully the first time. No need to try to insert old data again.
 @DeprecationWarning
 def join_old_and_new_db():
-    new_db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)), r'../../database/euro_counter.sqlite3')
+    new_db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
+                               r'../../database/euro_counter.sqlite3')
     new_conn = sqlite3.connect(new_db_path)
     new_cur = new_conn.cursor()
 

@@ -16,8 +16,8 @@ def run_cron():
     youtube = YoutubeConnect(config_location='../../eurovision_data/config/cron.ini')
     for video_groups in data['video_group']:
         link_list = [video_info['link'] for video_info in video_groups['videos']
-                     if video_groups['type'] == 'Euro semi finals 1 2019'
-                     or video_groups['type'] == 'Euro semi finals 2 2019']
+                     if video_groups['type'] == 'Euro semi finals 1 2021'
+                     or video_groups['type'] == 'Euro semi finals 2 2021']
         video_dict = youtube.get_video_data_for_video_list(link_list, video_groups['type'])
         db.store_data(video_dict)
         print('data storage successful')
