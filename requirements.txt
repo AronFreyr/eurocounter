@@ -3,3 +3,4 @@ django
 apiclient
 google-api-python-client
 gunicorn
+django-sass
