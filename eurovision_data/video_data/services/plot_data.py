@@ -6,12 +6,14 @@ import json
 from django.conf import settings
 
 
-def create_graph(data_from_db, y_value='views', year=None):
+def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
 
     if not data_from_db:
         return 'No data was found.'
 
-    finals_dates = _get_eurovision_finals_dates()
+    grand_finals_dates = _get_eurovision_finals_dates('eurovision_grand_final_dates')
+    semi_finals_1_dates = _get_eurovision_finals_dates('eurovision_first_semi_final_dates')
+    semi_finals_2_dates = _get_eurovision_finals_dates('eurovision_second_semi_final_dates')
 
     value_dict = {x.get_clean_name(): {'views': [], 'likes': [],
                                        'dislikes': [], 'comment_count': [],
@@ -25,7 +27,18 @@ def create_graph(data_from_db, y_value='views', year=None):
     for x in data_from_db:  # Create dictionary with lists for each value so the plot function understands it.
         name = x.get_clean_name()
         value_dict[name]['views'].append(x.get_views())
-        value_dict[name]['time'].append(x.get_time())
+        if mode == 'Concurrent graph':
+            time = x.get_time().split('.')[0][:-3]
+            if time.split(':')[-1] == '30' or time.split(':')[-1] == '00':
+                time_obj = datetime.datetime.strptime(time, "%Y-%m-%d %H:%M")
+                if 'semi finals 1' in x.get_description():
+                    time_delta = str(time_obj - semi_finals_1_dates[year])
+                else:
+                    time_delta = str(time_obj - semi_finals_2_dates[year])
+                value_dict[name]['time'].append(time_delta)
+        else:
+            value_dict[name]['time'].append(x.get_time())
+
         value_dict[name]['type'].append(x.get_description())
         value_dict[name]['likes'].append(x.get_likes())
         value_dict[name]['dislikes'].append(x.get_dislikes())
@@ -44,11 +57,11 @@ def create_graph(data_from_db, y_value='views', year=None):
 
     tracer_list = []
 
-    if year:
+    if year is not None and mode == 'Normal graph':
         annotations = [
             # Dictionary for the arrow indicating the Eurovision Finals date.
             dict(
-                x=finals_dates[year], y=0, arrowcolor="#000000",
+                x=grand_finals_dates[year], y=0, arrowcolor="#000000",
                 arrowhead=1, arrowsize=1, arrowwidth=1,
                 ax=0, ay=-300, bgcolor="rgba(0,0,0,0)",
                 bordercolor="#000000", borderpad=1, borderwidth=1,
@@ -69,7 +82,6 @@ def create_graph(data_from_db, y_value='views', year=None):
         tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list, layout=layout)
-    #py.offline.plot(fig, filename=r'../plots/test-plot.html', auto_open=False)
     return py.offline.plot(fig, include_plotlyjs=True, output_type='div', config=config)
 
 
@@ -106,11 +118,11 @@ def _define_graph_layout(year, y_value):
     return layout
 
 
-def _get_eurovision_finals_dates():
+def _get_eurovision_finals_dates(finals):
     """ Gets the date of every Eurovision final from the JSON and returns it as a dict. """
     with open(settings.JSON_LOCATION) as f:
         json_data = json.load(f)
-    finals_data = json_data['eurovision_grand_final_dates']
+    finals_data = json_data[finals]
     finals_dates = {}
     for key, value in finals_data.items():
         if value != 'None':

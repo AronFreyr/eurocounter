@@ -41,9 +41,11 @@ def display_plot_year(request, year):
     y_axis_possibilities = ['views', 'likes', 'dislikes', 'comment_count', 'likes vs dislikes', 'Likes per view (%)']
     line_possibilities = ['Semi-finals 1', 'Semi-finals 2', 'Both semi-finals']
     video_desc_list = ['Euro semi finals 1 ' + year, 'Euro semi finals 2 ' + year]
+    graph_choices = ['Normal graph', 'Concurrent graph']
 
     y_axis = 'views'
     line_choice = 'Both semi-finals'
+    graph_choice = 'Normal graph'
 
     if request.method == 'GET':
         if 'y_axis_choices' in request.GET:
@@ -58,6 +60,8 @@ def display_plot_year(request, year):
                 video_desc_list = ['Euro semi finals 1 ' + year, 'Euro semi finals 2 ' + year]
             else:
                 raise ValueError
+        if 'graph_choices' in request.GET:
+            graph_choice = request.GET['graph_choices']
 
     country_list = []
     with open(settings.JSON_CONTEST_RESULTS_LOCATION, encoding='utf8') as f:
@@ -74,11 +78,13 @@ def display_plot_year(request, year):
         euro_object_list.append(EuroData(views=x[0], time=x[1], name=x[2], description=x[3],
                                          likes=x[4], dislikes=x[5], comments=x[6]))
 
-    plot_as_div = plot_data.create_graph(euro_object_list, y_axis, year)
+    plot_as_div = plot_data.create_graph(euro_object_list, y_axis, year, graph_choice)
     return render(request, 'video_data/plot.html', {'plot': plot_as_div,
                                                     'year': year,
                                                     'y_axis_possibilities': y_axis_possibilities,
                                                     'y_axis_choice': y_axis,
                                                     'line_choices': line_possibilities,
                                                     'line_choice': line_choice,
+                                                    'graph_choices': graph_choices,
+                                                    'graph_choice': graph_choice,
                                                     'country_list': country_list})
