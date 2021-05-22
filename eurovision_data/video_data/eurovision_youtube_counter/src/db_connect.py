@@ -117,8 +117,11 @@ def read_data_with_video_type(video_type_input_list, year):
                            r'../database/euro_counter.sqlite3')
 
     # Cutoff point for the relevant data, later data is irrelevant.
-    last_relevant_date = datetime(year=int(year), month=5, day=22)
-    #last_relevant_date = datetime(year=2018, month=6, day=1)
+    if year == '2021':
+        last_relevant_date = datetime(year=int(year), month=5, day=25)
+    else:
+        last_relevant_date = datetime(year=int(year), month=5, day=22)
+    #last_relevant_date = datetime(year=int(year), month=6, day=1)
 
     conn = sqlite3.connect(db_path)
     cur = conn.cursor()
