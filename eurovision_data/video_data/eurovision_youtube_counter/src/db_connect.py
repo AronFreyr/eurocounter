@@ -31,7 +31,8 @@ def recreate_database(recreate=False):
 
     cur.execute("CREATE TABLE measurement("
                 "measurement_id serial PRIMARY KEY, measurement_time TIMESTAMP, "
-                "views BIGINT, likes BIGINT, dislikes BIGINT, comment_count BIGINT, "
+                #"views BIGINT, likes BIGINT, dislikes BIGINT, comment_count BIGINT, "
+                "views BIGINT, likes BIGINT, comment_count BIGINT, "
                 "video_id INTEGER REFERENCES video(video_id));")
     cur.close()
     conn.close()
@@ -74,10 +75,12 @@ def store_data(data):
         cur.execute('SELECT rowid FROM video WHERE link = (?)', (video_data,))
         video_id = cur.fetchall()[0][0]
 
-        cur.execute('INSERT INTO measurement (measurement_time, views, likes, dislikes, comment_count, video_id)'
-                    ' VALUES (?, ?, ?, ?, ?, ?)',
+        # cur.execute('INSERT INTO measurement (measurement_time, views, likes, dislikes, comment_count, video_id)'
+        cur.execute('INSERT INTO measurement (measurement_time, views, likes, comment_count, video_id)'
+                    ' VALUES (?, ?, ?, ?, ?)',
                     (data['timestamp'], data['videos'][video_data]['views'],
-                     data['videos'][video_data]['likes'], data['videos'][video_data]['dislikes'],
+                     # data['videos'][video_data]['likes'], data['videos'][video_data]['dislikes'],
+                     data['videos'][video_data]['likes'],
                      data['videos'][video_data]['comments'], video_id))
 
     conn.commit()
@@ -131,7 +134,7 @@ def read_data_with_video_type(video_type_input_list, year):
     # Formatted query string, for arbitrary number of variables for 'video_type.description'
     query = """
       SELECT measurement.views, measurement.measurement_time, video.name, video_type.description, 
-      measurement.likes, measurement.dislikes, measurement.comment_count 
+      measurement.likes, measurement.comment_count 
       FROM video 
       JOIN measurement ON video.rowid = measurement.video_id 
       JOIN video_type ON video.type_id = video_type.rowid 

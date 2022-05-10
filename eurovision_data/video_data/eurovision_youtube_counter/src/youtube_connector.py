@@ -91,7 +91,7 @@ class YoutubeConnect:
 
             video_dict['videos'][video]['views'] = int(video_results['items'][0]['statistics']['viewCount'])
             video_dict['videos'][video]['likes'] = int(video_results['items'][0]['statistics']['likeCount'])
-            video_dict['videos'][video]['dislikes'] = int(video_results['items'][0]['statistics']['dislikeCount'])
+            # video_dict['videos'][video]['dislikes'] = int(video_results['items'][0]['statistics']['dislikeCount'])
             video_dict['videos'][video]['comments'] = int(video_results['items'][0]['statistics']['commentCount'])
             video_dict['videos'][video]['name'] = video_results['items'][0]['snippet']['title']
         return video_dict
