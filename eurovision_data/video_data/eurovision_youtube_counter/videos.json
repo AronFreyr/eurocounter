@@ -130,6 +130,23 @@
       ]
     },
     {
+      "type": "Euro semi finals 1 2022",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=B6uEWHrr6fM"},
+        {"link": "https://www.youtube.com/watch?v=e6DMf-hVi7s"},
+        {"link": "https://www.youtube.com/watch?v=jfm8hVNZt8g"},
+        {"link": "https://www.youtube.com/watch?v=0sL6t82HGkE"},
+        {"link": "https://www.youtube.com/watch?v=93mpIFeQ4f4"},
+        {"link": "https://www.youtube.com/watch?v=CTbH4swRtis"},
+        {"link": "https://www.youtube.com/watch?v=tx__3r5uKRo"},
+        {"link": "https://www.youtube.com/watch?v=1F4xozknC_4"},
+        {"link": "https://www.youtube.com/watch?v=6FW_WgHLgvM"},
+        {"link": "https://www.youtube.com/watch?v=ug5Tein5Ams"},
+        {"link": "https://www.youtube.com/watch?v=AD7Xx6Vc1GM"},
+        {"link": "https://www.youtube.com/watch?v=9B4S5faMsl0"}
+      ]
+    },
+    {
       "type": "Euro official videos 2018",
       "videos": [
 	{"link": "https://www.youtube.com/watch?v=E7t4mu0tmWc"},
@@ -174,20 +191,23 @@
     "2018": "2018-05-12",
     "2019": "2019-05-18",
     "2020": "None",
-    "2021": "2021-05-22"
+    "2021": "2021-05-22",
+    "2022": "2022-05-14"
   },
   "eurovision_first_semi_final_dates": {
     "2017": "2017-05-09",
     "2018": "2018-05-08",
     "2019": "2019-05-14",
     "2020": "None",
-    "2021": "2021-05-18"
+    "2021": "2021-05-18",
+    "2022": "2022-05-10"
   },
   "eurovision_second_semi_final_dates": {
     "2017": "2017-05-11",
     "2018": "2018-05-10",
     "2019": "2019-05-16",
     "2020": "None",
-    "2021": "2021-05-20"
+    "2021": "2021-05-20",
+    "2022": "2022-05-12"
   }
 }

@@ -2,7 +2,7 @@
 
 class EuroData:
 
-    def __init__(self, name, views, likes, dislikes, comments, time, description):
+    def __init__(self, name, views, likes, comments, time, description, dislikes=1):
         self.name = name
         self.views = views
         self.likes = likes

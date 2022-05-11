@@ -76,7 +76,7 @@ def display_plot_year(request, year):
 
     for x in data_from_db:
         euro_object_list.append(EuroData(views=x[0], time=x[1], name=x[2], description=x[3],
-                                         likes=x[4], dislikes=x[5], comments=x[6]))
+                                         likes=x[4], comments=x[5]))
 
     plot_as_div = plot_data.create_graph(euro_object_list, y_axis, year, graph_choice)
     return render(request, 'video_data/plot.html', {'plot': plot_as_div,
