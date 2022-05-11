@@ -32,13 +32,12 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
             if time.split(':')[-1] == '30' or time.split(':')[-1] == '00':
                 time_obj = datetime.datetime.strptime(time, "%Y-%m-%d %H:%M")
                 if 'semi finals 1' in x.get_description():
-                    #time_delta = str(time_obj - semi_finals_1_dates[year])
                     time_delta = time_obj - semi_finals_1_dates[year]
                 else:
-                    #time_delta = str(time_obj - semi_finals_2_dates[year])
                     time_delta = time_obj - semi_finals_2_dates[year]
-                print(time_delta)
-                value_dict[name]['time'].append(datetime.datetime.now() + time_delta)
+
+                #value_dict[name]['time'].append(datetime.datetime.now() + time_delta)
+                value_dict[name]['time'].append(str(time_delta))
         else:
             value_dict[name]['time'].append(x.get_time())
 
@@ -59,7 +58,7 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
               }
 
     tracer_list = []
-    #print(value_dict)
+
     if year is not None and mode == 'Normal graph':
         annotations = [
             # Dictionary for the arrow indicating the Eurovision Finals date.
