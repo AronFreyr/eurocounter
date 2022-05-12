@@ -37,7 +37,10 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
                     time_delta = time_obj - semi_finals_2_dates[year]
 
                 #value_dict[name]['time'].append(datetime.datetime.now() + time_delta)
-                value_dict[name]['time'].append(str(time_delta))
+                time_delta = str(time_delta)
+                if time_delta[1] == ':':
+                    time_delta = '0' + time_delta
+                value_dict[name]['time'].append(time_delta)
         else:
             value_dict[name]['time'].append(x.get_time())
 
