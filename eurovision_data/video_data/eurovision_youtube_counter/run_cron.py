@@ -19,9 +19,10 @@ def run_cron():
         link_list = [video_info['link'] for video_info in video_groups['videos']
                      if video_groups['type'] == 'Euro semi finals 1 2022'
                      or video_groups['type'] == 'Euro semi finals 2 2022']
-        video_dict = youtube.get_video_data_for_video_list(link_list, video_groups['type'])
-        db.store_data(video_dict)
-        print('data storage successful')
+        if link_list:
+            video_dict = youtube.get_video_data_for_video_list(link_list, video_groups['type'])
+            db.store_data(video_dict)
+            print('data storage successful for type=' + video_groups["type"])
 
     print('ending process')
     return
