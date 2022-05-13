@@ -36,20 +36,29 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
                 else:
                     time_delta = time_obj - semi_finals_2_dates[year]
 
-                #value_dict[name]['time'].append(datetime.datetime.now() + time_delta)
-                time_delta = str(time_delta)
-                if time_delta[1] == ':':
+                minutes = str((time_delta.seconds//60) % 60)
+                if len(minutes) == 1:
+                    minutes = '0' + minutes
+                time_delta = str((time_delta.seconds // 3600) + (
+                            time_delta.days * 24)) + ":" + minutes + ":00"
+                # Adding an extra zeros to the time to make it be alphabetical.
+                while time_delta[1] == ':' or time_delta[2] == ':':
                     time_delta = '0' + time_delta
                 value_dict[name]['time'].append(time_delta)
+                value_dict[name]['type'].append(x.get_description())
+                value_dict[name]['likes'].append(x.get_likes())
+                value_dict[name]['dislikes'].append(x.get_dislikes())
+                value_dict[name]['comment_count'].append(x.get_comments())
+                value_dict[name]['likes vs dislikes'].append(x.get_proportion())
+                value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
         else:
             value_dict[name]['time'].append(x.get_time())
-
-        value_dict[name]['type'].append(x.get_description())
-        value_dict[name]['likes'].append(x.get_likes())
-        value_dict[name]['dislikes'].append(x.get_dislikes())
-        value_dict[name]['comment_count'].append(x.get_comments())
-        value_dict[name]['likes vs dislikes'].append(x.get_proportion())
-        value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
+            value_dict[name]['type'].append(x.get_description())
+            value_dict[name]['likes'].append(x.get_likes())
+            value_dict[name]['dislikes'].append(x.get_dislikes())
+            value_dict[name]['comment_count'].append(x.get_comments())
+            value_dict[name]['likes vs dislikes'].append(x.get_proportion())
+            value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
 
     config = {'scrollZoom': True, 'displayModeBar': True, 'showLink': False,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
@@ -87,6 +96,7 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
         tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list, layout=layout)
+    fig.update_xaxes(categoryorder='category ascending')
     return py.offline.plot(fig, include_plotlyjs=True, output_type='div', config=config)
 
 
