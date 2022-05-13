@@ -872,6 +872,322 @@
 				 "total_ranking": "26"
 				 }
 			]
+		},
+		{
+			"year": "2021",
+			"countries": [
+				{
+				"total_ranking": "1",
+				"jury_ranking": "4",
+				"tele_ranking": "1",
+				 "country_name": "Italy",
+				 "song_name": "Zitti e buoni",
+				"artist_name": "Måneskin",
+				 "total_points": "524",
+				 "tele_points": "318",
+				 "jury_points": "206"
+				 },
+
+				{
+				"total_ranking": "2",
+				"jury_ranking": "2",
+				"tele_ranking": "3",
+				 "country_name": "France",
+				 "song_name": "Voilà",
+				"artist_name": "Barbara Pravi",
+				 "total_points": "499",
+				 "tele_points": "251",
+				 "jury_points": "248"
+				 },
+
+				{
+				"total_ranking": "3",
+				"jury_ranking": "1",
+				"tele_ranking": "6",
+				 "country_name": "Switzerland",
+				 "song_name": "Tout l’univers",
+				"artist_name": "Gjon’s Tears",
+				 "total_points": "432",
+				 "tele_points": "165",
+				 "jury_points": "267"
+				 },
+
+				{
+				"total_ranking": "4",
+				"jury_ranking": "5",
+				"tele_ranking": "5",
+				 "country_name": "Iceland",
+				 "song_name": "10 Years",
+				"artist_name": "Daði & Gagnamagnið",
+				 "total_points": "378",
+				 "tele_points": "180",
+				 "jury_points": "198"
+				 },
+
+				{
+				"total_ranking": "5",
+				"jury_ranking": "9",
+				"tele_ranking": "2",
+				 "country_name": "Ukraine",
+				 "song_name": "Shum",
+				"artist_name": "Go_A",
+				 "total_points": "364",
+				 "tele_points": "267",
+				 "jury_points": "97"
+				 },
+
+				{
+				"total_ranking": "6",
+				"jury_ranking": "11",
+				"tele_ranking": "4",
+				 "country_name": "Finland",
+				 "song_name": "Dark Side",
+				"artist_name": "Blind Channel",
+				 "total_points": "301",
+				 "tele_points": "218",
+				 "jury_points": "83"
+				 },
+
+				{
+				"total_ranking": "7",
+				"jury_ranking": "3",
+				"tele_ranking": "14",
+				 "country_name": "Malta",
+				 "song_name": "Je Me Casse",
+				"artist_name": "Destiny",
+				 "total_points": "255",
+				 "tele_points": "47",
+				 "jury_points": "208"
+				 },
+
+				{
+				"total_ranking": "8",
+				"jury_ranking": "14",
+				"tele_ranking": "7",
+				 "country_name": "Lithuania",
+				 "song_name": "Discoteque",
+				"artist_name": "The Roop",
+				 "total_points": "220",
+				 "tele_points": "165",
+				 "jury_points": "55"
+				 },
+
+				{
+				"total_ranking": "9",
+				"jury_ranking": "8",
+				"tele_ranking": "8",
+				 "country_name": "Russia",
+				 "song_name": "Russian Woman",
+				"artist_name": "Manizha",
+				 "total_points": "204",
+				 "tele_points": "100",
+				 "jury_points": "104"
+				 },
+
+				{
+				"total_ranking": "10",
+				"jury_ranking": "10",
+				"tele_ranking": "10",
+				 "country_name": "Greece",
+				 "song_name": "Last Dance",
+				"artist_name": "Stefania",
+				 "total_points": "170",
+				 "tele_points": "79",
+				 "jury_points": "91"
+				 },
+
+				{
+				"total_ranking": "11",
+				"jury_ranking": "6",
+				"tele_ranking": "18",
+				 "country_name": "Bulgaria",
+				 "song_name": "Growing Up is Getting Old",
+				"artist_name": "Victoria",
+				 "total_points": "170",
+				 "tele_points": "79",
+				 "jury_points": "91"
+				 },
+
+				{
+				"total_ranking": "12",
+				"jury_ranking": "7",
+				"tele_ranking": "19",
+				 "country_name": "Portugal",
+				 "song_name": "Love Is On My Side",
+				"artist_name": "The Black Mamba",
+				 "total_points": "153",
+				 "tele_points": "27",
+				 "jury_points": "126"
+				 },
+
+				{
+				"total_ranking": "13",
+				"jury_ranking": "15",
+				"tele_ranking": "12",
+				 "country_name": "Moldova",
+				 "song_name": "Sugar",
+				"artist_name": "Natalia Gordienko",
+				 "total_points": "115",
+				 "tele_points": "62",
+				 "jury_points": "53"
+				 },
+
+				{
+				"total_ranking": "14",
+				"jury_ranking": "17",
+				"tele_ranking": "11",
+				 "country_name": "Sweden",
+				 "song_name": "Voices",
+				"artist_name": "Tusse",
+				 "total_points": "109",
+				 "tele_points": "63",
+				 "jury_points": "46"
+				 },
+
+				{
+				"total_ranking": "15",
+				"jury_ranking": "21",
+				"tele_ranking": "9",
+				 "country_name": "Serbia",
+				 "song_name": "Loco Loco",
+				"artist_name": "Hurricane",
+				 "total_points": "102",
+				 "tele_points": "82",
+				 "jury_points": "20"
+				 },
+
+				{
+				"total_ranking": "16",
+				"jury_ranking": "16",
+				"tele_ranking": "15",
+				 "country_name": "Cyprus",
+				 "song_name": "El Diablo",
+				"artist_name": "Elena Tsagrinou",
+				 "total_points": "94",
+				 "tele_points": "44",
+				 "jury_points": "50"
+				 },
+
+				{
+				"total_ranking": "17",
+				"jury_ranking": "12",
+				"tele_ranking": "20",
+				 "country_name": "Israel",
+				 "song_name": "Set Me Free",
+				"artist_name": "Eden Alene",
+				 "total_points": "93",
+				 "tele_points": "20",
+				 "jury_points": "73"
+				 },
+
+				{
+				"total_ranking": "18",
+				"jury_ranking": "22",
+				"tele_ranking": "13",
+				 "country_name": "Norway",
+				 "song_name": "Fallen Angel",
+				"artist_name": "TIX",
+				 "total_points": "75",
+				 "tele_points": "60",
+				 "jury_points": "15"
+				 },
+
+				{
+				"total_ranking": "19",
+				"jury_ranking": "13",
+				"tele_ranking": "22",
+				 "country_name": "Belgium",
+				 "song_name": "The Wrong Place",
+				"artist_name": "Hooverphonic",
+				 "total_points": "74",
+				 "tele_points": "3",
+				 "jury_points": "71"
+				 },
+
+				{
+				"total_ranking": "20",
+				"jury_ranking": "19",
+				"tele_ranking": "17",
+				 "country_name": "Azerbaijan",
+				 "song_name": "Mata Hari",
+				"artist_name": "Efendi",
+				 "total_points": "65",
+				 "tele_points": "33",
+				 "jury_points": "32"
+				 },
+
+				{
+				"total_ranking": "21",
+				"jury_ranking": "20",
+				"tele_ranking": "16",
+				 "country_name": "Albania",
+				 "song_name": "Karma",
+				"artist_name": "Anxhela Peristeri",
+				 "total_points": "57",
+				 "tele_points": "35",
+				 "jury_points": "22"
+				 },
+
+				{
+				"total_ranking": "22",
+				"jury_ranking": "18",
+				"tele_ranking": "21",
+				 "country_name": "San Marino",
+				 "song_name": "Adrenalina",
+				"artist_name": "Senhit feat. Flo Rida",
+				 "total_points": "50",
+				 "tele_points": "13",
+				 "jury_points": "37"
+				 },
+
+				{
+				"total_ranking": "23",
+				"jury_ranking": "23",
+				"tele_ranking": "26",
+				 "country_name": "Netherlands",
+				 "song_name": "Birth Of A New Age",
+				"artist_name": "Jeangu Macrooy",
+				 "total_points": "11",
+				 "tele_points": "0",
+				 "jury_points": "11"
+				 },
+
+				{
+				"total_ranking": "24",
+				"jury_ranking": "24",
+				"tele_ranking": "24",
+				 "country_name": "Spain",
+				 "song_name": "Voy A Quedarme",
+				"artist_name": "Blas Cantó",
+				 "total_points": "6",
+				 "tele_points": "0",
+				 "jury_points": "6"
+				 },
+
+				{
+				"total_ranking": "25",
+				"jury_ranking": "25",
+				"tele_ranking": "25",
+				 "country_name": "Germany",
+				 "song_name": "I Don’t Feel Hate",
+				"artist_name": "Jendrik",
+				 "total_points": "3",
+				 "tele_points": "0",
+				 "jury_points": "3"
+				 },
+
+				{
+				"total_ranking": "26",
+				"jury_ranking": "26",
+				"tele_ranking": "26",
+				 "country_name": "United Kingdom",
+				 "song_name": "Embers",
+				"artist_name": "James Newman",
+				 "total_points": "0",
+				 "tele_points": "0",
+				 "jury_points": "0"
+				 }
+			]
 		}
 	]
 }
