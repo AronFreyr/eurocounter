@@ -12,22 +12,22 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 
 import os
 import configparser
+from pathlib import Path
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 CONFIG_FILE = ''
 
 ENV = os.environ.get('ENVIRONMENT')
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 parser = configparser.ConfigParser(allow_no_value=True)
 
-JSON_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/videos.json'
-JSON_CONTEST_RESULTS_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/eurocontests_results.json'
+#JSON_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/videos.json'
+JSON_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'videos.json'
+JSON_CONTEST_RESULTS_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'eurocontests_results.json'
 
-with open(BASE_DIR + '/eurovision_data/secrets/secret_key.txt') as f:
+with open(BASE_DIR / 'eurovision_data' / 'secrets' / 'secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
     f.close()
 
@@ -41,10 +41,10 @@ else:
                            '\"PRODUCTION\" or \"DEVELOPMENT\"')
 
 if DEBUG:
-    CONFIG_FILE = BASE_DIR + '/eurovision_data/config/dev.ini'
+    CONFIG_FILE = BASE_DIR / 'eurovision_data' / 'config' / 'dev.ini'
     parser.read(CONFIG_FILE)
 else:
-    CONFIG_FILE = BASE_DIR + '/eurovision_data/config/prod.ini'
+    CONFIG_FILE = BASE_DIR / 'eurovision_data' / 'config' / 'prod.ini'
     parser.read(CONFIG_FILE)
 
 ALLOWED_HOSTS = []
@@ -79,7 +79,8 @@ ROOT_URLCONF = 'eurovision_data.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,7 +102,7 @@ WSGI_APPLICATION = 'eurovision_data.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
