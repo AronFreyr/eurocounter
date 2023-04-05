@@ -18,12 +18,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 CONFIG_FILE = ''
 
-ENV = os.environ.get('ENVIRONMENT')
+ENV = os.environ.get('ENVIRONMENT') or 'DEVELOPMENT'
+print(ENV)
 
 
 parser = configparser.ConfigParser(allow_no_value=True)
 
-#JSON_LOCATION = BASE_DIR + '/video_data/eurovision_youtube_counter/videos.json'
 JSON_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'videos.json'
 JSON_CONTEST_RESULTS_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'eurocontests_results.json'
 
@@ -31,6 +31,7 @@ with open(BASE_DIR / 'eurovision_data' / 'secrets' / 'secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
     f.close()
 
+DEBUG = False
 if ENV == 'PRODUCTION':
     DEBUG = False
 elif ENV == 'DEVELOPMENT':
