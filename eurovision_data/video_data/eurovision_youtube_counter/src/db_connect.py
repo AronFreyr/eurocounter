@@ -1,10 +1,14 @@
 import sqlite3
 import os
+from pathlib import Path
 
 from datetime import datetime
 
+DB_PATH = Path(__file__).resolve().parent.parent / 'database' / 'euro_counter.sqlite3'
+
 
 # This is mostly a test function, the database should not be destroyed from now on.
+@DeprecationWarning
 def recreate_database(recreate=False):
     """
     Function for creating or recreating the entire database. USE WITH CAUTION.
@@ -12,9 +16,7 @@ def recreate_database(recreate=False):
     if it is being recreated then it is necessary to delete the tables first and then create the database.
     :return: Nothing
     """
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
-                           r'../database/euro_counter.sqlite3')
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
     if recreate:  # If the database is not being created for the first time, we need to destroy it.
@@ -47,9 +49,7 @@ def store_data(data):
     :param data: The data that should be inserted.
     :return: Nothing.
     """
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
-                           r'../database/euro_counter.sqlite3')
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
     cur.execute('SELECT COUNT(1) FROM video_type WHERE description = (?)', (data['description'],))
@@ -89,11 +89,8 @@ def store_data(data):
     
     
 def read_data():
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
-                           r'../database/euro_counter.sqlite3')
-    print('db path: ' + db_path)
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
     cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
@@ -116,8 +113,6 @@ def read_data():
 
 
 def read_data_with_video_type(video_type_input_list, year):
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
-                           r'../database/euro_counter.sqlite3')
 
     # Cutoff point for the relevant data, later data is irrelevant.
     if year == '2021':
@@ -126,7 +121,7 @@ def read_data_with_video_type(video_type_input_list, year):
         last_relevant_date = datetime(year=int(year), month=5, day=22)
     #last_relevant_date = datetime(year=int(year), month=6, day=1)
 
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
 
     question_marks = '?' * len(video_type_input_list)  # Create as many question marks as the list is long.
@@ -160,10 +155,7 @@ def read_data_with_year(year_input):
     last_date = datetime(year=int(year_input), month=12, day=31)
     print('last_date:', last_date)
 
-    db_path = os.path.join(os.path.realpath(os.path.dirname(__file__)),
-                           r'../database/euro_counter.sqlite3')
-
-    conn = sqlite3.connect(db_path)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
                 'FROM video '
