@@ -19,17 +19,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG_FILE = ''
 
 ENV = os.environ.get('ENVIRONMENT') or 'DEVELOPMENT'
-print(ENV)
 
 
 parser = configparser.ConfigParser(allow_no_value=True)
 
-JSON_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'videos.json'
-JSON_CONTEST_RESULTS_LOCATION = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'eurocontests_results.json'
+EURO_YOUTUBE_COUNTER_DATA_DIR = BASE_DIR / 'video_data' / 'eurovision_youtube_counter' / 'data'
+JSON_LOCATION = EURO_YOUTUBE_COUNTER_DATA_DIR / 'videos.json'
+JSON_CONTEST_RESULTS_LOCATION = EURO_YOUTUBE_COUNTER_DATA_DIR / 'eurocontests_results.json'
 
 with open(BASE_DIR / 'eurovision_data' / 'secrets' / 'secret_key.txt') as f:
     SECRET_KEY = f.read().strip()
-    f.close()
 
 DEBUG = False
 if ENV == 'PRODUCTION':
@@ -80,7 +79,6 @@ ROOT_URLCONF = 'eurovision_data.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        #'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {

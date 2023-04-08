@@ -19,10 +19,10 @@ class YoutubeConnect:
         # Get parser object to read config files.
         parser = configparser.ConfigParser(allow_no_value=True)
         if config_location is None:
-            parser.read(settings.CONFIG_FILE)
+            parser.read(settings.CONFIG_FILE)  # Running in Django
         else:
-            parser.read(config_location)
-        # There might be multiple youtube api keys, split them on , to create a list.
+            parser.read(config_location)  # Running outside Django
+        # There might be multiple YouTube api keys, split them on , to create a list.
         api_key_list = parser['YOUTUBE']['API_KEYS'].split(',')
         # At first try, use the first api key.
         if len(api_key_list) == 1:
