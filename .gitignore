@@ -1,8 +1,15 @@
+# The ususal
 **/.idea
 **/__pycache__
 *.pyc
 **/venv
 **/.venv
-**/eurovision_youtube_counter/database
+
+# Secret stuff
 **/secrets
-**/config
+**/eurovision_data/config
+
+
+# Databases
+**/eurovision_youtube_counter/database
+eurovision_data/db.sqlite3
