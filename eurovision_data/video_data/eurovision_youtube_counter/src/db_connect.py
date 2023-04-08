@@ -16,7 +16,7 @@ def recreate_database(recreate=False):
     if it is being recreated then it is necessary to delete the tables first and then create the database.
     :return: Nothing
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH.__str__())
     cur = conn.cursor()
 
     if recreate:  # If the database is not being created for the first time, we need to destroy it.
@@ -49,7 +49,7 @@ def store_data(data):
     :param data: The data that should be inserted.
     :return: Nothing.
     """
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH.__str__())
     cur = conn.cursor()
 
     cur.execute('SELECT COUNT(1) FROM video_type WHERE description = (?)', (data['description'],))
@@ -90,7 +90,7 @@ def store_data(data):
     
 def read_data():
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH.__str__())
     cur = conn.cursor()
 
     cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
@@ -121,7 +121,7 @@ def read_data_with_video_type(video_type_input_list, year):
         last_relevant_date = datetime(year=int(year), month=5, day=22)
     #last_relevant_date = datetime(year=int(year), month=6, day=1)
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH.__str__())
     cur = conn.cursor()
 
     question_marks = '?' * len(video_type_input_list)  # Create as many question marks as the list is long.
@@ -155,7 +155,7 @@ def read_data_with_year(year_input):
     last_date = datetime(year=int(year_input), month=12, day=31)
     print('last_date:', last_date)
 
-    conn = sqlite3.connect(DB_PATH)
+    conn = sqlite3.connect(DB_PATH.__str__())
     cur = conn.cursor()
     cur.execute('SELECT measurement.views, measurement.measurement_time, video.name, video_type.description '
                 'FROM video '
