@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 import os
 import configparser
 from pathlib import Path
+from .logger_settings import LoggerSettings
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,13 +44,19 @@ else:
 if DEBUG:
     CONFIG_FILE = BASE_DIR / 'eurovision_data' / 'config' / 'dev.ini'
     parser.read(CONFIG_FILE)
+    logger_location = BASE_DIR / 'logs'
+    if not logger_location.exists():
+        logger_location.mkdir()
 else:
     CONFIG_FILE = BASE_DIR / 'eurovision_data' / 'config' / 'prod.ini'
     parser.read(CONFIG_FILE)
+    logger_location = Path('var') / 'log' / 'euro_counter'
+logger_settings = LoggerSettings(logger_location.__str__())
+LOGGING = logger_settings.get_logger_settings()
 
 ALLOWED_HOSTS = []
 
-for key, host in parser.items("ALLOWED_HOSTS"):
+for key, host in parser.items('ALLOWED_HOSTS'):
     ALLOWED_HOSTS.append(host)
 
 # Application definition
@@ -143,3 +150,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# This fixes a problem with the being run twice in Django when it is in debug mode.
+# The solution was found here:
+# https://stackoverflow.com/questions/26682413/django-rotating-file-handler-stuck-when-file-is-equal-to-maxbytes
+# if DEBUG and os.environ.get('RUN_MAIN', None) != 'true':
+#     LOGGING = {}
