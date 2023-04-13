@@ -50,7 +50,9 @@ if DEBUG:
 else:
     CONFIG_FILE = BASE_DIR / 'eurovision_data' / 'config' / 'prod.ini'
     parser.read(CONFIG_FILE)
-    logger_location = Path('var') / 'log' / 'euro_counter'
+    logger_location = Path('/var') / 'log' / 'euro_counter'
+    if not logger_location.exists():
+        logger_location.mkdir()
 logger_settings = LoggerSettings(logger_location.__str__())
 LOGGING = logger_settings.get_logger_settings()
 
