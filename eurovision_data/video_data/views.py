@@ -6,7 +6,10 @@ from .services.data_handling import EuroData
 from django.shortcuts import render
 from django.conf import settings
 import json
+import logging
 from django.template import RequestContext
+
+logger = logging.getLogger(__name__)
 
 
 def handler404(request, exception):
