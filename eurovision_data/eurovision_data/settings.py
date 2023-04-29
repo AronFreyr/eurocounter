@@ -56,6 +56,10 @@ LOGGING = logger_settings.get_logger_settings()
 
 ALLOWED_HOSTS = []
 
+# This fixes an issue where youtube videos were not embedded properly.
+# Solution found here: https://stackoverflow.com/questions/51424578/embed-youtube-code-is-not-working-in-html
+SECURE_REFERRER_POLICY = "no-referrer-when-downgrade"
+
 for key, host in parser.items('ALLOWED_HOSTS'):
     ALLOWED_HOSTS.append(host)
 
@@ -154,5 +158,5 @@ STATIC_URL = '/static/'
 # This fixes a problem with the being run twice in Django when it is in debug mode.
 # The solution was found here:
 # https://stackoverflow.com/questions/26682413/django-rotating-file-handler-stuck-when-file-is-equal-to-maxbytes
-# if DEBUG and os.environ.get('RUN_MAIN', None) != 'true':
-#     LOGGING = {}
+if DEBUG and os.environ.get('RUN_MAIN', None) != 'true':
+    LOGGING = {}
