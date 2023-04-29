@@ -291,10 +291,10 @@
 				]
 				}
 				,
-				 {
-				 	"year": "2018"
-				 	,"countries": [
-				 	{
+		{
+			"year": "2018",
+			"countries": [
+				{
 				 "country_name": "Israel",
 				 "song_name": "TOY",
 				 "artist_name": "Netta",
@@ -1187,6 +1187,310 @@
 				 "tele_points": "0",
 				 "jury_points": "0"
 				 }
+			]
+		},
+		{
+			"year": "2022",
+			"countries": [
+				{
+				"total_ranking": "1",
+				"jury_ranking": "4",
+				"tele_ranking": "1",
+				"country_name": "Ukraine",
+				"song_name": "Stefania",
+				"artist_name": "Kalush Orchestra",
+				"total_points": "631",
+				"tele_points": "439",
+				"jury_points": "192"
+				},
+
+				{
+				"total_ranking": "2",
+				"jury_ranking": "1",
+				"tele_ranking": "5",
+				"country_name": "United Kingdom",
+				"song_name": "Space Man",
+				"artist_name": "Sam Ryder",
+				"total_points": "466",
+				"tele_points": "183",
+				"jury_points": "283"
+				},
+
+				{
+				"total_ranking": "3",
+				"jury_ranking": "3",
+				"tele_ranking": "3",
+				"country_name": "Spain",
+				"song_name": "SloMo",
+				"artist_name": "Chanel",
+				"total_points": "459",
+				"tele_points": "228",
+				"jury_points": "231"
+				},
+
+				{
+				"total_ranking": "4",
+				"jury_ranking": "2",
+				"tele_ranking": "6",
+				"country_name": "Sweden",
+				"song_name": "Hold Me Closer",
+				"artist_name": "Cornelia Jakobs",
+				"total_points": "438",
+				"tele_points": "180",
+				"jury_points": "258"
+				},
+
+				{
+				"total_ranking": "5",
+				"jury_ranking": "11",
+				"tele_ranking": "4",
+				"country_name": "Serbia",
+				"song_name": "In Corpore Sano",
+				"artist_name": "Konstrakta",
+				"total_points": "312",
+				"tele_points": "225",
+				"jury_points": "87"
+				},
+
+				{
+				"total_ranking": "6",
+				"jury_ranking": "6",
+				"tele_ranking": "8",
+				"country_name": "Italy",
+				"song_name": "Brividi",
+				"artist_name": "Mahmood & Blanco",
+				"total_points": "268",
+				"tele_points": "110",
+				"jury_points": "158"
+				},
+
+				{
+				"total_ranking": "7",
+				"jury_ranking": "20",
+				"tele_ranking": "2",
+				"country_name": "Moldova",
+				"song_name": "Trenulețul",
+				"artist_name": "Zdob și Zdub & Advahov Brothers",
+				"total_points": "253",
+				"tele_points": "239",
+				"jury_points": "14"
+				},
+
+				{
+				"total_ranking": "8",
+				"jury_ranking": "7",
+				"tele_ranking": "12",
+				"country_name": "Greece",
+				"song_name": "Die Together",
+				"artist_name": "Amanda Georgiadi Tenfjord",
+				"total_points": "215",
+				"tele_points": "57",
+				"jury_points": "158"
+				},
+
+				{
+				"total_ranking": "9",
+				"jury_ranking": "5",
+				"tele_ranking": "15",
+				"country_name": "Portugal",
+				"song_name": "Saudade, saudade",
+				"artist_name": "Maro",
+				"total_points": "207",
+				"tele_points": "36",
+				"jury_points": "171"
+				},
+
+				{
+				"total_ranking": "10",
+				"jury_ranking": "17",
+				"tele_ranking": "7",
+				"country_name": "Norway",
+				"song_name": "Give That Wolf a Banana",
+				"artist_name": "Subwoolfer",
+				"total_points": "182",
+				"tele_points": "146",
+				"jury_points": "36"
+				},
+
+				{
+				"total_ranking": "11",
+				"jury_ranking": "8",
+				"tele_ranking": "14",
+				"country_name": "Netherlands",
+				"song_name": "De Diepte",
+				"artist_name": "S10",
+				"total_points": "171",
+				"tele_points": "42",
+				"jury_points": "129"
+				},
+
+				{
+				"total_ranking": "12",
+				"jury_ranking": "14",
+				"tele_ranking": "9",
+				"country_name": "Poland",
+				"song_name": "River",
+				"artist_name": "Ochman",
+				"total_points": "151",
+				"tele_points": "105",
+				"jury_points": "46"
+				},
+
+				{
+				"total_ranking": "13",
+				"jury_ranking": "15",
+				"tele_ranking": "10",
+				"country_name": "Estonia",
+				"song_name": "Hope",
+				"artist_name": "Stefan",
+				"total_points": "141",
+				"tele_points": "98",
+				"jury_points": "43"
+				},
+
+				{
+				"total_ranking": "14",
+				"jury_ranking": "18",
+				"tele_ranking": "11",
+				"country_name": "Lithuania",
+				"song_name": "Sentimentai",
+				"artist_name": "Monika Liu",
+				"total_points": "128",
+				"tele_points": "93",
+				"jury_points": "35"
+				},
+
+				{
+				"total_ranking": "15",
+				"jury_ranking": "9",
+				"tele_ranking": "24",
+				"country_name": "Australia",
+				"song_name": "Not The Same",
+				"artist_name": "Sheldon Riley",
+				"total_points": "125",
+				"tele_points": "21",
+				"jury_points": "23"
+				},
+
+				{
+				"total_ranking": "16",
+				"jury_ranking": "10",
+				"tele_ranking": "23",
+				"country_name": "Azerbaijan",
+				"song_name": "Fade To Black",
+				"artist_name": "Nadir Rustamli",
+				"total_points": "106",
+				"tele_points": "3",
+				"jury_points": "103"
+				},
+
+				{
+				"total_ranking": "17",
+				"jury_ranking": "12",
+				"tele_ranking": "25",
+				"country_name": "Switzerland",
+				"song_name": "Boys Do Cry",
+				"artist_name": "Marius Bear",
+				"total_points": "78",
+				"tele_points": "0",
+				"jury_points": "78"
+				},
+
+				{
+				"total_ranking": "18",
+				"jury_ranking": "21",
+				"tele_ranking": "13",
+				"country_name": "Romania",
+				"song_name": "Llámame",
+				"artist_name": "WRS",
+				"total_points": "65",
+				"tele_points": "53",
+				"jury_points": "12"
+				},
+
+				{
+				"total_ranking": "19",
+				"jury_ranking": "13",
+				"tele_ranking": "21",
+				"country_name": "Belgium",
+				"song_name": "Miss You",
+				"artist_name": "Jérémie Makiese",
+				"total_points": "64",
+				"tele_points": "55",
+				"jury_points": "9"
+				},
+
+				{
+				"total_ranking": "20",
+				"jury_ranking": "16",
+				"tele_ranking": "17",
+				"country_name": "Armenia",
+				"song_name": "Snap",
+				"artist_name": "Rosa Linn",
+				"total_points": "61",
+				"tele_points": "21",
+				"jury_points": "40"
+				},
+
+				{
+				"total_ranking": "21",
+				"jury_ranking": "22",
+				"tele_ranking": "16",
+				"country_name": "Finland",
+				"song_name": "Jezebel",
+				"artist_name": "The Rasmus",
+				"total_points": "38",
+				"tele_points": "26",
+				"jury_points": "12"
+				},
+
+				{
+				"total_ranking": "22",
+				"jury_ranking": "19",
+				"tele_ranking": "22",
+				"country_name": "Czechia",
+				"song_name": "Lights Off",
+				"artist_name": "We Are Domi",
+				"total_points": "38",
+				"tele_points": "53",
+				"jury_points": "3"
+				},
+
+				{
+				"total_ranking": "23",
+				"jury_ranking": "23",
+				"tele_ranking": "18",
+				"country_name": "Iceland",
+				"song_name": "Með hækkandi sól",
+				"artist_name": "Systur",
+				"total_points": "20",
+				"tele_points": "10",
+				"jury_points": "10"
+				},
+
+				{
+				"total_ranking": "24",
+				"jury_ranking": "24",
+				"tele_ranking": "19",
+				"country_name": "France",
+				"song_name": "Fulenn",
+				"artist_name": "Alvan & Ahez",
+				"total_points": "17",
+				"tele_points": "8",
+				"jury_points": "9"
+				},
+
+				{
+				"total_ranking": "25",
+				"jury_ranking": "25",
+				"tele_ranking": "20",
+				"country_name": "Germany",
+				"song_name": "Rockstars",
+				"artist_name": "Malik Harris",
+				"total_points": "6",
+				"tele_points": "6",
+				"jury_points": "0"
+				}
 			]
 		}
 	]

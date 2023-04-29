@@ -145,6 +145,9 @@ def read_data_with_video_type(video_type_input_list, year):
 
     data_from_db = cur.fetchall()
 
+    cur.close()
+    conn.close()
+
     return data_from_db
 
 
