@@ -165,6 +165,42 @@
       ]
     },
     {
+      "type": "Euro semi finals 1 2023",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=7ferYXj9vAA"},
+        {"link": "https://www.youtube.com/watch?v=5nuypbLMfNQ"},
+        {"link": "https://www.youtube.com/watch?v=XBNfNJZ660o"},
+        {"link": "https://www.youtube.com/watch?v=dT9K7RCHxus"},
+        {"link": "https://www.youtube.com/watch?v=4ZGpbQ83l4s"},
+        {"link": "https://www.youtube.com/watch?v=LWiW2GDNZ0s"},
+        {"link": "https://www.youtube.com/watch?v=JPiY1v3EfNc"},
+        {"link": "https://www.youtube.com/watch?v=_NmF5otCtqU"},
+        {"link": "https://www.youtube.com/watch?v=E89gtz9rdBM"},
+        {"link": "https://www.youtube.com/watch?v=DMRNUyG86Qs"},
+        {"link": "https://www.youtube.com/watch?v=0DQH8CkuCQk"},
+        {"link": "https://www.youtube.com/watch?v=x2DFDllgsfM"},
+        {"link": "https://www.youtube.com/watch?v=_zTpCGtCufw"}
+      ]
+    },
+    {
+      "type": "Euro semi finals 2 2023",
+      "videos": [
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""},
+        {"link": ""}
+      ]
+    },
+    {
       "type": "Euro official videos 2018",
       "videos": [
 	{"link": "https://www.youtube.com/watch?v=E7t4mu0tmWc"},
@@ -210,7 +246,8 @@
     "2019": "2019-05-18",
     "2020": "None",
     "2021": "2021-05-22",
-    "2022": "2022-05-14"
+    "2022": "2022-05-14",
+    "2023": "2023-05-13"
   },
   "eurovision_first_semi_final_dates": {
     "2017": "2017-05-09",
@@ -218,7 +255,8 @@
     "2019": "2019-05-14",
     "2020": "None",
     "2021": "2021-05-18",
-    "2022": "2022-05-10"
+    "2022": "2022-05-10",
+    "2023": "2023-05-09"
   },
   "eurovision_second_semi_final_dates": {
     "2017": "2017-05-11",
@@ -226,6 +264,7 @@
     "2019": "2019-05-16",
     "2020": "None",
     "2021": "2021-05-20",
-    "2022": "2022-05-12"
+    "2022": "2022-05-12",
+    "2023": "2023-05-11"
   }
 }

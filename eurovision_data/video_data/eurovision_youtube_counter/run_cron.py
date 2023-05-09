@@ -27,8 +27,8 @@ def run_cron():
     youtube = YoutubeConnect(config_location=conf_location)
     for video_groups in data['video_group']:
         link_list = [video_info['link'] for video_info in video_groups['videos']
-                     if video_groups['type'] == 'Euro semi finals 1 2022'
-                     or video_groups['type'] == 'Euro semi finals 2 2022']
+                     if video_groups['type'] == 'Euro semi finals 1 2023'
+                     or video_groups['type'] == 'Euro semi finals 2 2023']
         if link_list:
             video_dict = youtube.get_video_data_for_video_list(link_list, video_groups['type'])
             db.store_data(video_dict)
