@@ -46,10 +46,10 @@ class YoutubeConnect:
         If it is the URL then it will the ID will be gotten from it.
         :param part: The parameter parts of the video data we want.
         It is almost always 'snippet,contentDetails,statistics' but it is possible to use something else.
-        Check the Youtube API documentation for what other options are available.
+        Check the YouTube API documentation for what other options are available.
         :return: The raw results of the video data.
         """
-        # Youtube needs to know what parts of the data we want to retrieve.
+        # YouTube needs to know what parts of the data we want to retrieve.
         # If no part was specified, use the default one that we store in the config file.
         if part is None:
             part = self.default_part
@@ -91,7 +91,6 @@ class YoutubeConnect:
 
             video_dict['videos'][video]['views'] = int(video_results['items'][0]['statistics']['viewCount'])
             video_dict['videos'][video]['likes'] = int(video_results['items'][0]['statistics']['likeCount'])
-            # video_dict['videos'][video]['dislikes'] = int(video_results['items'][0]['statistics']['dislikeCount'])
             video_dict['videos'][video]['comments'] = int(video_results['items'][0]['statistics']['commentCount'])
             video_dict['videos'][video]['name'] = video_results['items'][0]['snippet']['title']
         return video_dict
