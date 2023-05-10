@@ -41,7 +41,7 @@ def display_plot_year(request, year):
         return render(request, 'video_data/error.html')
         # TODO: more specific error and error description. Also catch the error and display an error page.
         raise ValueError
-    y_axis_possibilities = ['views', 'likes', 'dislikes', 'comment_count', 'likes vs dislikes', 'Likes per view (%)']
+    y_axis_possibilities = ['views', 'likes', 'comment_count', 'Likes per view (%)']
     line_possibilities = ['Semi-finals 1', 'Semi-finals 2', 'Both semi-finals']
     video_desc_list = ['Euro semi finals 1 ' + year, 'Euro semi finals 2 ' + year]
     graph_choices = ['Normal graph', 'Concurrent graph']

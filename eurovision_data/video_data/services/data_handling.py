@@ -6,11 +6,10 @@ logger = logging.getLogger(__name__)
 
 class EuroData:
 
-    def __init__(self, name, views, likes, comments, time, description, dislikes=1, year=None):
+    def __init__(self, name, views, likes, comments, time, description, year=None):
         self.name = name
         self.views = views
         self.likes = likes
-        self.dislikes = dislikes
         self.comments = comments
         self.time = time
         self.description = description
@@ -25,9 +24,6 @@ class EuroData:
     def get_likes(self):
         return self.likes
 
-    def get_dislikes(self):
-        return self.dislikes
-
     def get_comments(self):
         return self.comments
 
@@ -36,9 +32,6 @@ class EuroData:
 
     def get_description(self):
         return self.description
-
-    def get_proportion(self):
-        return self.likes/self.dislikes
 
     def get_like_percentage(self):
         return self.likes/self.views * 100
