@@ -75,6 +75,24 @@ class EuroData:
                 clean_name = country + delim + song_name + delim + artist + delim + nr_semi
                 return clean_name
 
+            elif self.year == '2019':
+                # example: Estonia - LIVE - Victor Crone - Storm - First Semi-Final - Eurovision 2019
+                # example: Chingiz - Truth - Azerbaijan - LIVE - Second Semi-Final - Eurovision 2019
+                split_name = self.name.split(' - ')
+                nr_semi = split_name[4]
+                if 'First' in nr_semi:
+                    nr_semi = 'SF1'
+                    country = split_name[0]
+                    artist = split_name[2]
+                    song_name = split_name[3]
+                else:
+                    nr_semi = 'SF2'
+                    country = split_name[2]
+                    artist = split_name[0]
+                    song_name = split_name[1]
+                clean_name = country + delim + song_name + delim + artist + delim + nr_semi
+                return clean_name
+
             else:
                 split_name = self.name.split(' - ')
                 song_name = split_name[1]

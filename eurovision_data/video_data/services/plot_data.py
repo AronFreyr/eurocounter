@@ -16,7 +16,7 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
     semi_finals_2_dates = _get_eurovision_finals_dates('eurovision_second_semi_final_dates')
 
     # create empty dictionary for videos
-    value_dict = {x.get_clean_name(): {'views': [], 'likes': [], 'comment_count': [],
+    value_dict = {x.get_clean_name(): {'views': [], 'likes': [], 'comment_count': [], 'country': [],
                                        'time': [], 'type': [], 'Likes per view (%)': []} for x in data_from_db}
 
     while len(data_from_db) > 10000:  # limiting the points displayed on the graph to improve performance.
@@ -43,16 +43,14 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
                 while time_delta[1] == ':' or time_delta[2] == ':':
                     time_delta = '0' + time_delta
                 value_dict[name]['time'].append(time_delta)
-                value_dict[name]['type'].append(x.get_description())
-                value_dict[name]['likes'].append(x.get_likes())
-                value_dict[name]['comment_count'].append(x.get_comments())
-                value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
         else:
             value_dict[name]['time'].append(x.get_time())
-            value_dict[name]['type'].append(x.get_description())
-            value_dict[name]['likes'].append(x.get_likes())
-            value_dict[name]['comment_count'].append(x.get_comments())
-            value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
+
+        value_dict[name]['type'].append(x.get_description())
+        value_dict[name]['likes'].append(x.get_likes())
+        value_dict[name]['comment_count'].append(x.get_comments())
+        value_dict[name]['Likes per view (%)'].append(x.get_like_percentage())
+        value_dict[name]['country'].append(x.get_clean_name().split(' - ')[0])
 
     config = {'scrollZoom': True, 'displayModeBar': True, 'showLink': False,
               'modeBarButtonsToRemove': ['sendDataToCloud',  # Don't need that
@@ -86,8 +84,10 @@ def create_graph(data_from_db, y_value='views', year=None, mode='Normal graph'):
     layout['hovermode'] = 'closest'
     layout['legend'] = dict(bgcolor='#f8f8f8', bordercolor='#f4f4f4', borderwidth=2)
 
-    for key, value in sorted(value_dict.items()):
-        tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['type'], mode='lines+markers', name=key)
+    # Sort the dict to be the latest value of 'y_value', go from highest to lowest.
+    for key, value in sorted(value_dict.items(), key=lambda x: x[1][y_value][-1], reverse=True):
+        tracer = go.Scatter(x=value['time'], y=value[y_value], text=value['country'], mode='lines+markers', name=key,
+                            hoverlabel={'namelength': 0})
         tracer_list.append(tracer)
     fig = go.Figure(data=tracer_list, layout=layout)
     fig.update_xaxes(categoryorder='category ascending')
