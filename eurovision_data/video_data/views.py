@@ -7,7 +7,6 @@ from django.shortcuts import render
 from django.conf import settings
 import json
 import logging
-from django.template import RequestContext
 
 logger = logging.getLogger(__name__)
 
@@ -22,13 +21,6 @@ def handler404(request, exception):
 def index(request):
     """ Simple index that displays the homepage. Currently only displays some text. """
     return render(request, 'video_data/index.html')
-
-
-def display_plot(request):
-
-    data_from_db = db.read_data()
-    plot_as_div = plot_data.create_graph(data_from_db)
-    return render(request, 'video_data/plot.html', {'plot': plot_as_div})
 
 
 def covid_year(request):
