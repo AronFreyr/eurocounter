@@ -201,6 +201,24 @@
       ]
     },
     {
+      "type": "Euro semi finals 1 2024",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=_6ncN7WC_Og" },
+        {"link": "https://www.youtube.com/watch?v=IyO42taxFpM" },
+        {"link": "https://www.youtube.com/watch?v=HuLKyOQcRDw" },
+        {"link": "https://www.youtube.com/watch?v=BNc5zTYkTaQ" },
+        {"link": "https://www.youtube.com/watch?v=-qjs54ZTRBQ" },
+        {"link": "https://www.youtube.com/watch?v=6LyjyuaQggs" },
+        {"link": "https://www.youtube.com/watch?v=tSek8SqlDIA" },
+        {"link": "https://www.youtube.com/watch?v=eXvdKgO2Acw" },
+        {"link": "https://www.youtube.com/watch?v=246RdLYgRZY" },
+        {"link": "https://www.youtube.com/watch?v=u6p4dujtvPI" },
+        {"link": "https://www.youtube.com/watch?v=kiIhvA2Ozzk" },
+        {"link": "https://www.youtube.com/watch?v=_KXwJAu7aCU" },
+        {"link": "https://www.youtube.com/watch?v=K4hlFKVHsag" }
+      ]
+    },
+    {
       "type": "Euro official videos 2018",
       "videos": [
 	{"link": "https://www.youtube.com/watch?v=E7t4mu0tmWc"},
@@ -247,7 +265,8 @@
     "2020": "None",
     "2021": "2021-05-22",
     "2022": "2022-05-14",
-    "2023": "2023-05-13"
+    "2023": "2023-05-13",
+    "2024": "2023-05-11"
   },
   "eurovision_first_semi_final_dates": {
     "2017": "2017-05-09",
@@ -256,7 +275,8 @@
     "2020": "None",
     "2021": "2021-05-18",
     "2022": "2022-05-10",
-    "2023": "2023-05-09"
+    "2023": "2023-05-09",
+    "2024": "2023-05-07"
   },
   "eurovision_second_semi_final_dates": {
     "2017": "2017-05-11",
@@ -265,6 +285,7 @@
     "2020": "None",
     "2021": "2021-05-20",
     "2022": "2022-05-12",
-    "2023": "2023-05-11"
+    "2023": "2023-05-11",
+    "2024": "2023-05-09"
   }
 }
