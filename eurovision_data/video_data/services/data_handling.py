@@ -45,11 +45,19 @@ class EuroData:
         """
         delim = ' - '
         try:
-            if self.year == '2023':
+            if self.year == '2023' or self.year == '2024':
+                # example: Monika Linkytė - Stay | Lithuania 🇱🇹 | Second Semi-Final | Eurovision 2023
+
+                # special case for switzerland 2024
+                self.name = self.name.replace('🇨🇭|', ' 🇨🇭 |')
+
                 split_name = self.name.split(' | ')
                 artist_and_song = split_name[0]
                 artist, song_name = artist_and_song.split(' - ')
                 song_name = song_name.replace(' (LIVE)', '')
+
+                # special case for estonia 2024, the song name is too long.
+                song_name = song_name.replace('(nendest) narkootikumidest ei tea me (küll) midagi', '(nendest) narkootikumidest...')
                 country = split_name[1][:-3]
                 nr_semi = split_name[2]
                 if 'First' in nr_semi:
@@ -92,6 +100,10 @@ class EuroData:
                     song_name = split_name[1]
                 clean_name = country + delim + song_name + delim + artist + delim + nr_semi
                 return clean_name
+
+            # elif self.year == '2024':
+            #     # example: Marina Satti - ZARI (LIVE) | Greece 🇬🇷 | Second Semi-Final | Eurovision 2024
+            #     split_name = self.name.split(' | ')
 
             else:
                 split_name = self.name.split(' - ')
