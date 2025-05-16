@@ -105,4 +105,5 @@ class YoutubeConnect:
         if 'youtube' in video_string:
             # split the video URL on '=' and use the latter half of the split.
             video_string = video_string.split('=')[1]
+            video_string = video_string.split('&')[0]
         return video_string

@@ -237,6 +237,42 @@
       ]
     },
     {
+      "type": "Euro semi finals 1 2025",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=f3mAIpm5QxI&ab"},
+        {"link": "https://www.youtube.com/watch?v=F3wsy8bywXQ&ab"},
+        {"link": "https://www.youtube.com/watch?v=0Jc02OFU42w&ab"},
+        {"link": "https://www.youtube.com/watch?v=WReEi3jLRFQ&ab"},
+        {"link": "https://www.youtube.com/watch?v=6QRHcLJS0T0&ab"},
+        {"link": "https://www.youtube.com/watch?v=Wb8-gbgan80&ab"},
+        {"link": "https://www.youtube.com/watch?v=-vkDhFhgNX0&ab"},
+        {"link": "https://www.youtube.com/watch?v=zQSPqZkKzRQ&ab"},
+        {"link": "https://www.youtube.com/watch?v=cwVL1dbjqj4&ab"},
+        {"link": "https://www.youtube.com/watch?v=NQXhvclWuPE&ab"},
+        {"link": "https://www.youtube.com/watch?v=_sfZ4L8pGzQ&ab"},
+        {"link": "https://www.youtube.com/watch?v=F4lALgxBiYI&ab"},
+        {"link": "https://www.youtube.com/watch?v=0uT_Y3i7B6A&ab"}
+      ]
+    },
+    {
+      "type": "Euro semi finals 2 2025",
+      "videos": [
+        {"link": "https://www.youtube.com/watch?v=5sXbxyQ5K0M&ab"},
+        {"link": "https://www.youtube.com/watch?v=tRTfxUJtDOs&ab"},
+        {"link": "https://www.youtube.com/watch?v=coGaxAWtp58&ab"},
+        {"link": "https://www.youtube.com/watch?v=OP9n_cO-6V4&ab"},
+        {"link": "https://www.youtube.com/watch?v=2AN3vvLORuw&ab"},
+        {"link": "https://www.youtube.com/watch?v=2vLHs89Akzo&ab"},
+        {"link": "https://www.youtube.com/watch?v=Q_ND8mF9d3c&ab"},
+        {"link": "https://www.youtube.com/watch?v=jMY-eUDTs0Q&ab"},
+        {"link": "https://www.youtube.com/watch?v=R1J7nJXLKAg&ab"},
+        {"link": "https://www.youtube.com/watch?v=4m1c46KAc3o&ab"},
+        {"link": "https://www.youtube.com/watch?v=TUyvT65c9ok&ab"},
+        {"link": "https://www.youtube.com/watch?v=wlZSQZm8j8c&ab"},
+        {"link": "https://www.youtube.com/watch?v=xF_sNQXP5g8&ab"}
+      ]
+    },
+    {
       "type": "Euro official videos 2018",
       "videos": [
 	{"link": "https://www.youtube.com/watch?v=E7t4mu0tmWc"},
@@ -284,7 +320,8 @@
     "2021": "2021-05-22",
     "2022": "2022-05-14",
     "2023": "2023-05-13",
-    "2024": "2024-05-11"
+    "2024": "2024-05-11",
+    "2025": "2025-05-17"
   },
   "eurovision_first_semi_final_dates": {
     "2017": "2017-05-09",
@@ -294,7 +331,8 @@
     "2021": "2021-05-18",
     "2022": "2022-05-10",
     "2023": "2023-05-09",
-    "2024": "2024-05-07"
+    "2024": "2024-05-07",
+    "2025": "2025-05-13"
   },
   "eurovision_second_semi_final_dates": {
     "2017": "2017-05-11",
@@ -304,6 +342,7 @@
     "2021": "2021-05-20",
     "2022": "2022-05-12",
     "2023": "2023-05-11",
-    "2024": "2024-05-09"
+    "2024": "2024-05-09",
+    "2025": "2025-05-15"
   }
 }

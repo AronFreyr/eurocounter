@@ -29,7 +29,7 @@ def covid_year(request):
 
 def display_plot_year(request, year):
 
-    if year not in ['2017', '2018', '2019', '2021', '2022', '2023', '2024']:
+    if year not in ['2017', '2018', '2019', '2021', '2022', '2023', '2024', '2025']:
         return render(request, 'video_data/error.html')
         # TODO: more specific error and error description. Also catch the error and display an error page.
         raise ValueError
